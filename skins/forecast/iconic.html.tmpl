@@ -1,0 +1,28 @@
+#errorCatcher Echo
+## forecast sampler skin for weewx - Copyright 2014 Matthew Wall
+## $Id: iconic.html.tmpl 1743 2017-09-19 02:43:01Z mwall $
+#encoding UTF-8
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Forecast Sampler: Iconic</title>
+  <link rel='stylesheet' type='text/css' href='forecast.css'/>
+  <link rel='stylesheet' type='text/css' href='forecast_iconic.css'/>
+  <style>
+.location {
+    font-size: 150%;
+}
+.current {
+    font-size: 400%;
+}
+  </style>
+</head>
+<body>
+
+<div class='location'>$station.location</div>
+<div class='current'>$current.outTemp</div>
+
+#include "forecast_iconic.inc"
+
+</body>
+</html>

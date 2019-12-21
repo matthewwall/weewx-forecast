@@ -1,0 +1,48 @@
+#errorCatcher Echo
+## forecast sampler skin for weewx - Copyright 2014 Matthew Wall
+## $Id: forecast-periods.html.tmpl 1586 2016-11-26 17:31:36Z mwall $
+#encoding UTF-8
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Forecast Sampler: Periods</title>
+  <link rel='stylesheet' type='text/css' href='forecast.css'/>
+</head>
+<body>
+
+#if $varExists('forecast')
+
+<h1>Periods from Selected Forecast Sources</h1>
+<p>
+Display specific portions of a forecast, from various forecast sources.  This
+illustrates the use of the forecast search list extension.
+</p>
+
+#set $sources = {'WU': 'Weather Underground', 'OWM': 'Open WeatherMap', 'NWS': 'US National Weather Service', 'UKMO': 'UK Met Office'}
+#for $source in $sources
+<h2>$sources[$source]</h2>
+<p>
+  #set $periods = $forecast.weather_periods($source, max_events=6)
+  #if len($periods) > 0
+    #set $wts = ''
+    #set $wloc = ''
+    #for $period in $periods
+      #set $wts = $period.issued_ts
+      #set $wloc = $period.location
+$period.event_ts $period.temp $forecast.label('Weather', $period.clouds)<br/>
+    #end for
+<br/><span class='issued'>Issued at $wts for $wloc</span>
+  #else
+<p>No data for $source</p>
+  #end if
+</p>
+#end for
+
+#else
+
+<p>The forecast search list extension is not installed.</p>
+
+#end if
+
+</body>
+</html>

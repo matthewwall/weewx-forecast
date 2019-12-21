@@ -1,0 +1,41 @@
+#errorCatcher Echo
+## forecast sampler skin for weewx - Copyright 2014 Matthew Wall
+## $Id: iconic.html.tmpl 1612 2016-12-10 20:23:19Z mwall $
+#encoding UTF-8
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Forecast Sampler: Iconic</title>
+  <link rel='stylesheet' type='text/css' href='forecast.css'/>
+  <link rel='stylesheet' type='text/css' href='forecast_iconic.css'/>
+  <style>
+.source {
+    font-size: 150%;
+}
+  </style>
+</head>
+<body>
+
+## settings can be specified different ways:
+##   skin.conf - this is the normal way to specify settings
+##   weewx.conf - use this to generate multiple variations of a single skin
+##   within a template - when including the .inc multiple times
+## if you include multiple times, specify the settings in this file before
+## including the template file.
+
+<div class='source'>Weather Underground</div>
+#set global $forecast_iconic_settings = dict()
+#set global $forecast_iconic_settings['source'] = 'WU'
+#set global $forecast_iconic_settings['num_days'] = 10
+#set global $forecast_iconic_settings['orientation'] = 'horizontal'
+#include "forecast_iconic.inc"
+
+<div class='source'>National Weather Service</div>
+#set global $forecast_iconic_settings = dict()
+#set global $forecast_iconic_settings['source'] = 'NWS'
+#set global $forecast_iconic_settings['num_days'] = 4
+#set global $forecast_iconic_settings['orientation'] = 'horizontal'
+#include "forecast_iconic.inc"
+
+</body>
+</html>

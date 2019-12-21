@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" /><title>National Weather Service Text Product Display</title>
+<meta name="DC.title" content="National Weather Service Text Product Display" />
+<meta name="DC.description" content="National Weather Service is your source for the most complete weather forecast and weather related information on the web" />
+<meta name="DC.creator" content="US Department of Commerce, NOAA, National Weather Service" />
+<meta name="DC.date.created" scheme="ISO8601" content="2013-05-01" />
+<meta name="DC.date.reviewed" scheme="ISO8601" content="2012-07-19" />
+<meta name="DC.language" scheme="DCTERMS.RFC1766" content="EN-US" />
+<meta name="DC.keywords" content="weather, local weather forecast, local forecast, weather forecasts, local weather, radar, fire weather, center weather service units, hamweather" />
+<meta name="DC.publisher" content="NOAA's National Weather Service" />
+<meta name="DC.contributor" content="National Weather Service" />
+<meta name="DC.rights" content="http://www.weather.gov/disclaimer.php" />
+<meta name="rating" content="General" />
+<meta name="robots" content="index,follow" />
+<meta name="Distribution" content="Global" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<link href="/css/default/secondary.css" title="nwsstyle" rel="stylesheet" type="text/css" media="all" />
+<link href="/css/product/main.css" title="nwsstyle" rel="stylesheet" type="text/css" media="all"></head>
+<body>
+<div id="container"><a href="#skipnav" class="skip">Skip Navigation</a>
+<a name="skipnav"></a>
+<div id="local"> <div id="localcontent">
+<!-- // CONTENT STARTS HERE -->
+
+<span style="font-size: 20px; font-weight:bold;">Point Forecast Matrices </span><br />Issued by NWS Boston, MA<br /><br /><div><b>Current Version</b>&nbsp;|&nbsp;<a href="?site=NWS&issuedby=BOX&product=PFM&format=TXT&version=2&glossary=0">Previous Version</a>&nbsp;|&nbsp;<a href="?site=NWS&issuedby=BOX&product=PFM&format=ci&version=1&glossary=0">Graphics & Text</a>&nbsp;|&nbsp;<a href="javascript:window.print()">Print</a>&nbsp;|&nbsp;<a href="product_types.php?site=NWS">Product List</a>&nbsp;|&nbsp;<a href="?site=NWS&issuedby=BOX&product=PFM&format=TXT&version=1&glossary=1">Glossary On</a></div><div>Versions: <b>1</b>
+<a href="?site=NWS&issuedby=BOX&product=PFM&format=TXT&version=2&glossary=0">2</a>
+<a href="?site=NWS&issuedby=BOX&product=PFM&format=TXT&version=3&glossary=0">3</a>
+<a href="?site=NWS&issuedby=BOX&product=PFM&format=TXT&version=4&glossary=0">4</a>
+<a href="?site=NWS&issuedby=BOX&product=PFM&format=TXT&version=5&glossary=0">5</a>
+<a href="?site=NWS&issuedby=BOX&product=PFM&format=TXT&version=6&glossary=0">6</a>
+<a href="?site=NWS&issuedby=BOX&product=PFM&format=TXT&version=7&glossary=0">7</a>
+<a href="?site=NWS&issuedby=BOX&product=PFM&format=TXT&version=8&glossary=0">8</a>
+<a href="?site=NWS&issuedby=BOX&product=PFM&format=TXT&version=9&glossary=0">9</a>
+<a href="?site=NWS&issuedby=BOX&product=PFM&format=TXT&version=10&glossary=0">10</a> <hr size="1" width="520"noshade="noshade" align="left" /></div><pre class="glossaryProduct">
+000
+FOUS51 KBOX 111720
+PFMBOX
+
+POINT FORECAST MATRICES
+NATIONAL WEATHER SERVICE TAUNTON MA
+119 PM EDT SAT MAY 11 2013
+
+MAZ015-112100-
+BOSTON-SUFFOLK MA
+42.36N  71.04W ELEV. 20 FT
+119 PM EDT SAT MAY 11 2013
+
+DATE             SAT 05/11/13            SUN 05/12/13            MON 05/13/13
+EDT 3HRLY     05 08 11 14 17 20 23 02 05 08 11 14 17 20 23 02 05 08 11 14 17 20
+UTC 3HRLY     09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00
+
+MAX/MIN                      70          57          69          45          59
+TEMP                   67 67 65 63 61 59 62 65 68 67 62 53 49 46 49 55 58 58 53
+DEWPT                  58 57 60 58 57 56 56 55 49 42 37 34 31 30 29 29 27 30 27
+RH                     73 70 84 84 87 90 81 70 51 40 39 48 50 53 46 37 30 34 36
+WIND DIR               SW SW SW SW  S  S SW  W  W  W  W  W  W  W  W  W  W SW  W
+WIND SPD               18 14 11  9  9  8 10 11 16 19 17 12 12 10 13  9 17 12 10
+WIND GUST                                            28             20
+CLOUDS                 OV OV OV OV OV OV OV OV B2 SC CL FW CL CL CL FW FW SC SC
+POP 12HR                     90          90          80           0           5
+QPF 12HR                   0.23        0.15        0.05           0           0
+SNOW 12HR                 00-00       00-00       00-00
+RAIN SHWRS                 L  D  L  C  L  D  C  C  S
+TSTMS                      S  C  S  S        S  S
+OBVIS                        PF PF PF PF PF
+
+
+DATE          TUE 05/14/13  WED 05/15/13  THU 05/16/13  FRI 05/17/13
+EDT 6HRLY     02 08 14 20   02 08 14 20   02 08 14 20   02 08 14 20
+UTC 6HRLY     06 12 18 00   06 12 18 00   06 12 18 00   06 12 18 00
+
+MIN/MAX          42    58      44    63      50    65      55    66
+TEMP          45 47 57 52   46 49 62 58   52 54 64 61   56 58 65 61
+DEWPT         36 34 30 33   33 36 35 40   44 48 50 51   52 52 50 50
+PWIND DIR        NW    NW      NW    SW       S     S       S    SW
+WIND CHAR        GN    LT      LT    LT      LT    GN      LT    LT
+AVG CLOUDS    FW FW SC SC   FW FW FW SC   SC B1 B2 B2   B2 B2 B2 B2
+POP 12HR          5    10       5    10      20    40      50    40
+RAIN SHWRS           S  S                  S  S  S  C    C  C  C  C
+
+$$
+
+RIZ004-112100-
+WARWICK-KENT RI
+41.72N  71.43W ELEV. 55 FT
+119 PM EDT SAT MAY 11 2013
+
+DATE             SAT 05/11/13            SUN 05/12/13            MON 05/13/13
+EDT 3HRLY     05 08 11 14 17 20 23 02 05 08 11 14 17 20 23 02 05 08 11 14 17 20
+UTC 3HRLY     09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00
+
+MAX/MIN                      70          58          72          42          62
+TEMP                   66 65 63 60 59 59 60 64 71 68 62 52 47 43 48 57 61 60 53
+DEWPT                  59 58 59 57 57 56 55 54 47 41 38 35 32 31 30 28 26 29 28
+RH                     78 78 87 90 93 90 84 70 42 37 41 52 56 62 49 33 26 31 38
+WIND DIR                S SW  S  S  S SW SW  W  W  W  W  W  W  W  W SW SW SW  W
+WIND SPD               17 11  9  8  6  6  5 10 17 16 11  9  9  5 10 10 14 16  9
+WIND GUST              27 24                         21          21
+CLOUDS                 OV B2 OV OV OV OV OV OV B1 SC SC B1 CL CL FW FW FW SC SC
+POP 12HR                     90          90          90           0           5
+QPF 12HR                   0.17        0.21        0.04           0           0
+SNOW 12HR                 00-00       00-00       00-00
+RAIN SHWRS              O  O  D  L  L  L  D  L  S
+TSTMS                   C  C  C  S  S     C  S  S
+OBVIS                        PF PF PF PF PF
+
+
+DATE          TUE 05/14/13  WED 05/15/13  THU 05/16/13  FRI 05/17/13
+EDT 6HRLY     02 08 14 20   02 08 14 20   02 08 14 20   02 08 14 20
+UTC 6HRLY     06 12 18 00   06 12 18 00   06 12 18 00   06 12 18 00
+
+MIN/MAX          39    63      42    67      49    70      53    72
+TEMP          43 46 61 55   45 49 65 60   52 55 68 63   56 59 71 64
+DEWPT         31 32 30 34   35 37 36 41   45 49 50 51   52 52 50 51
+PWIND DIR        NW    NW      NW    SW       S     S       S     S
+WIND CHAR        GN    LT      LT    LT      LT    GN      LT    LT
+AVG CLOUDS    FW FW FW SC   FW FW FW SC   SC B1 B2 B2   B2 B2 B2 B2
+POP 12HR          5    10       5    10      20    30      30    40
+RAIN SHWRS           S  S                  S  S  S  C    C  C  C  C
+
+$$
+
+CTZ002-112100-
+WINDSOR LOCKS-HARTFORD CT
+41.94N  72.68W ELEV. 173 FT
+119 PM EDT SAT MAY 11 2013
+
+DATE             SAT 05/11/13            SUN 05/12/13            MON 05/13/13
+EDT 3HRLY     05 08 11 14 17 20 23 02 05 08 11 14 17 20 23 02 05 08 11 14 17 20
+UTC 3HRLY     09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00
+
+MAX/MIN                      71          55          69          38          63
+TEMP                   68 67 66 62 59 57 59 63 69 65 58 48 43 40 45 56 61 61 52
+DEWPT                  60 60 59 57 54 52 50 47 40 35 32 29 29 28 28 29 22 28 25
+RH                     76 78 78 84 83 83 72 56 35 33 37 47 57 62 51 35 22 28 35
+WIND DIR               SW  S  S  S  S SW  W  W  W  W  W  W  W SW  W  W  W  W NW
+WIND SPD               13 11  8  5  4  4  5 11 16 17 12  8  8  6  9 10 13 14  8
+WIND GUST              27                                        19
+CLOUDS                 OV OV B2 OV OV OV OV B1 OV SC B1 CL CL CL CL FW SC SC SC
+POP 12HR                    100          40          40           0          10
+QPF 12HR                   0.43           0           0           0           0
+SNOW 12HR                 00-00       00-00       00-00
+RAIN SHWRS              O  O  C  C  C  C  C  C  S
+TSTMS                   C  C  S  S
+
+
+DATE          TUE 05/14/13  WED 05/15/13  THU 05/16/13  FRI 05/17/13
+EDT 6HRLY     02 08 14 20   02 08 14 20   02 08 14 20   02 08 14 20
+UTC 6HRLY     06 12 18 00   06 12 18 00   06 12 18 00   06 12 18 00
+
+MIN/MAX          36    64      39    72      48    74      53    77
+TEMP          40 44 62 54   43 49 70 63   52 56 72 66   56 60 75 66
+DEWPT         30 32 26 31   32 35 35 41   45 49 52 53   52 52 50 51
+PWIND DIR        NW    NW      NW    SW       S     S       S     W
+WIND CHAR        LT    GN      LT    LT      LT    LT      LT    LT
+AVG CLOUDS    SC FW FW SC   FW FW FW SC   B1 B2 B2 B2   B2 B2 B1 B1
+POP 12HR          5    10       5    20      40    40      50    40
+RAIN SHWRS           S  S             S    C  C  C  C    C  C  C  C
+
+$$
+</pre>
+
+
+
+<!-- // CONTENT ENDS HERE -->
+</div></div>
+<hr width="100%" />
+<div id="required">
+<div id="firstgov"><a href="/nwsexit.php?url=http://www.usa.gov/"><img src="/css/default/images/usagov.gif" alt="USA.gov is the U.S. government's official web portal to all federal, state and local government web resources and services." class="img" width="110" height="30" /></a></div>
+<ul id="contact">
+<li>National Weather Service</li>
+<li>National Weather Service National Headquarters</li>
+<li>1325 East West Highway</li><li>Silver Spring, MD  20910</li>
+<li></li>
+Incorrect Region Format!<li>Web Master's E-mail: <a href="mailto:">NWS Internet Services Team</a></li>
+<li>Page last modified: May 1st, 2013 15:31 UTC</li>
+</ul>
+<ul id="disclaimer">
+<li><a href="http://www.weather.gov/disclaimer.php">Disclaimer</a></li>
+<li><a href="http://www.weather.gov/credits.php">Credits</a></li>
+<li><a href="http://www.weather.gov/glossary/">Glossary</a></li>
+</ul>
+<ul id="policy">
+<li><a href="http://www.weather.gov/privacy.php">Privacy Policy</a></li>
+<li><a href="http://www.weather.gov/admin.php">About Us</a></li>
+<li><a href="http://www.weather.gov/careers.php">Career Opportunities</a></li>
+</ul>
+</div></div>
+</body></html>

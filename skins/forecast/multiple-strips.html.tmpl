@@ -1,0 +1,43 @@
+#errorCatcher Echo
+## forecast sampler skin for weewx - Copyright 2014 Matthew Wall
+## $Id: multiple-strips.html.tmpl 1621 2016-12-12 16:44:27Z mwall $
+#encoding UTF-8
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Forecast Sampler: Multiple Strips</title>
+  <link rel='stylesheet' type='text/css' href='forecast.css'/>
+  <link rel='stylesheet' type='text/css' href='forecast_strip.css' />
+</head>
+<body>
+
+<h1>Forecast Strip</h1>
+<p>
+Display forecast data in multiple strips, one for each forecast source.
+</p>
+
+<h2>Weather Underground</h2>
+<div id='wu_strip'></div>
+
+<h2>NWS</h2>
+<div id='nws_strip'></div>
+
+<h2>Aeris</h2>
+<div id='aeris_strip'></div>
+
+#set global $forecast_strip_settings = dict()
+#set global $forecast_strip_settings['source'] = 'WU'
+#include "forecast_strip.inc"
+#set global $forecast_strip_settings['source'] = 'NWS'
+#include "forecast_strip.inc"
+#set global $forecast_strip_settings['source'] = 'Aeris'
+#include "forecast_strip.inc"
+
+<script>
+populate_strip('wu_strip', 'WU');
+populate_strip('nws_strip', 'NWS');
+populate_strip('aeris_strip', 'Aeris');
+</script>
+
+</body>
+</html>

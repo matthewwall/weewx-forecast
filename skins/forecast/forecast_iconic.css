@@ -1,0 +1,54 @@
+/* styles for the forecast_iconic */
+.fc_iconic .iconic-horizontal td {
+    vertical-align: top;
+    text-align: right;
+}
+.fc_iconic .col-outlook {
+    min-width: 32px;
+}
+.fc_iconic .col-day {
+    min-width: 32px;
+    text-transform: uppercase;
+}
+.fc_iconic .col-precip {
+    text-align: left;
+}
+.fc_iconic .col-obvis {
+}
+.fc_iconic .row-outlook {
+}
+.fc_iconic .row-day {
+    text-transform: uppercase;
+}
+.fc_iconic .row-precip {
+}
+.fc_iconic .row-obvis {
+}
+.fc_iconic .date {
+    font-size: 80%;
+}
+.fc_iconic .outlook-img {
+    width: 32px;
+    border: none;
+}
+.fc_iconic .precip-img {
+    width: 32px;
+    border: none;
+}
+.fc_iconic .obvis-img {
+    width: 32px;
+    border: none;
+}
+.fc_iconic .temp {
+    float: left;
+}
+.fc_iconic .temp-range {
+    min-width: 32px;
+    background-color: #aaaaaa;
+    border: 1px solid #666666;
+    webkit-radius: 10px;
+    moz-radius: 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}

@@ -1,0 +1,203 @@
+3.4.0
+* Started port to Python 3
+* added more debug logging for tide generation and parsing
+* made xtide parser a static method to match the pattern of other forecasts
+
+3.3.2
+* enforce no border to prevent skins from messing with forecast icons
+
+3.3.1
+* fix the dark sky entry in the [Forecast] hierarchy of the config file
+
+3.3.0
+* include support for Dark Sky hourly and daily forecasts
+* min and max stats calculations now include xxxxMin and xxxxMax fields (if
+  they exist) in min/max calculations
+
+3.2.19
+* graphic tide display is not yet ready for release
+* include single-strip-vertical and iconic-horizontal in the installer
+
+3.2.18
+* fix degenerate case in iconic when max/min temperatures are the same
+
+3.2.17
+* really fix the iconic temperature display (horizontal timeline)
+
+3.2.16
+* fix hi/lo temperature position in the iconic display
+
+3.2.15
+* added num_days option for forecast_table
+* adjust forecast_table layout
+* provide more feedback during forecast comparison
+
+3.2.14
+* fix [object Object] display in strip
+
+3.2.13
+* deal with unset mode variable
+
+3.2.12
+* deal with double-digit negative values leading in NWS 6-hour forecasts
+
+3.2.11
+* fix show_tide typo in forecast_strip configuration
+
+3.2.10
+* fixed typo in forecast parsing for 'all' key in 'clouds'
+
+3.2.9
+* deal with NWS forecasts that have multiple forecasts for a single location id
+* deal with UKMO forecasts that have no data
+
+3.2.8
+* added forecast_compact.css to copy_once files in skin.conf
+
+3.2.7
+* deal with NWS PFMs that are not all uppercase
+
+3.2.6
+* added compact display
+* minor cleanup to enclosing html
+* fixed moon rise/set when pyephem is not installed
+* do not complain so much about empty values when generating reports
+* forecast_compact is version 0.1
+* forecast_iconic is version 0.6
+* forecast_strip is version 0.3
+* forecast_table is version 0.6
+
+3.2.5
+* explicit support for nws v3
+* added optional delay parameter for kicking off forecast downloads
+* make examples consistent
+* clean up json import
+
+3.2.4
+* added options to show/hide data within iconic
+
+3.2.3
+* put current in html template, not iconic include
+* additional checks for None in iconic include
+* added orientation option for iconic
+
+3.2.2
+* clarify different approaches to setting parameters for included templates
+
+3.2.1
+* include options in sample iconic.html.tmpl template
+* do not try to emit rows if no forecast data
+
+3.2.0 09dec2016
+* added iconic forecast display
+* eliminate redundant checks for forecast variable
+
+3.1.4 26nov2016
+* do not log None values in create_value
+* conditional display of rows in strip view
+* include forecast_strip.inc in the extension installer
+* use min-width to avoid table distortion in forecast_table
+* default to showing tides
+* forecast_table is now at 0.6
+* forecast_strip is now at 0.3
+* consolidate forecast_table and forecast_strip settings
+* split the demo report into separate pages
+* include both single and multiple examples for table and strip
+* fixed tint scaling to work across unit systems
+
+3.1.3
+* fix None failure for issued_ts when no forecast data
+* provide more detail about configuration options in comments
+* include sample html template to show forecast comparison plots
+
+3.1.2
+* fix duplicate show_tides tag in the default skin.conf
+* better comments in table/strip includes
+
+3.1.1
+* fix forecast_settings in sample skin
+* include skin that illustrates the use of forecast comparison generator
+
+3.1.0
+* added support for open weathermap forecasts
+* added support for UK met office forecasts
+* added support for Aeris forecasts
+* added support for world weather online v2
+* refactored unit tests
+* fixed METRIC group_rain from mm to cm to match weewx core
+* added support for METRICWX
+* properly parse values in exponential notation
+* deal with MM values from NWS (missing data)
+* explicit, small values for Y (trace amounts)
+* added forecast plot generator, which can do forecast comparisons
+
+3.0.8
+* fixed typo in json configuration test
+* accept either SNOWSHWRS or SNOW SHWRS from NWS forecasts
+
+3.0.7 14oct2015
+* update readme with weewx 3.x instructions
+
+3.0.6 06aug2015
+* deal with weewx 3.2.0 bugfix to non-pyephem sunrise/sunset
+
+3.0.5 07mar2015
+* make forecast_table XHTML-compliant (thanks to Gary Roderick)
+
+3.0.4 01mar2015
+* deal with NWS WARNING, ADVISORY, and WATCH symbols W, Y, A
+
+3.0.3 05feb2015
+* guard against DatabaseError, not just OperationalError
+
+3.0.2 13dec2014
+* instead of failing, just do not run if no XTide location
+
+3.0.1 07dec2014
+* remove absolute paths from skin.conf
+
+3.0 06dec2014
+* update for use with weewx v3
+* improved error reporting for improper configurations
+* improved installation and configuration process
+
+2.4.3
+* display issue time in zambretti forecast in the forecast skin
+* emit forecast version during startup for better diagnostics
+
+2.4.2 22sep2014
+* added explicit duration parameter for tide forecasts
+* fix duration of tide forecasts
+* fix zambretti winddir checks
+
+2.4.1 27aug2014
+* handle zero wind conditions when calculating zambretti
+
+2.4 26aug2014
+* guard against commas in xtide location name
+* fixed wloc bug in forecast_table.inc
+* calculate zambretti at 09:00 instead of every archive interval
+* use pressure trend and average wind direction for zambretti
+* enable setting of forecast_table variables via the skin Extras
+* fix sun/moon timing in forecast_table
+* fix tide display in daily summaries
+
+2.3
+* include commented units to make units changes easier
+
+2.2 08feb2014
+* forgot to invoke main for manual invocation
+
+2.1 07feb2014
+* release to go with weewx 2.6.0
+
+2.1b1 06feb2014
+* accomodate changes to ValueHelper
+* minor adjustments to improve installation using extension installer
+* fixed parsing of locations in the xtide forecast
+
+2.0 08jan2014
+* put forecast skin into an extension package
+
+0.1 09sep2013
+* initial release

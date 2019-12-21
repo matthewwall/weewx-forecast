@@ -1,0 +1,30 @@
+#errorCatcher Echo
+## forecast sampler skin for weewx - Copyright 2014 Matthew Wall
+## $Id: single-strip.html.tmpl 1635 2016-12-24 23:15:16Z mwall $
+#encoding UTF-8
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Forecast Sampler: Strip</title>
+  <link rel='stylesheet' type='text/css' href='forecast.css'/>
+  <link rel='stylesheet' type='text/css' href='forecast_strip.css' />
+</head>
+<body>
+
+<h1>Forecast Strip</h1>
+<p>
+Display forecast data in strip format by including the strip template.
+</p>
+
+<div id='wu_strip'></div>
+
+#set global $forecast_strip_settings = dict()
+#set global $forecast_strip_settings['orientation'] = 'vertical'
+#include "forecast_strip.inc"
+
+<script>
+populate_strip('wu_strip', 'WU');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+/* styles for the forecast_strip */
+.fc_strip th {
+  font-weight: normal;
+  font-size: 80%;
+}
+.fc_strip td {
+  font-weight: normal;
+  text-align: right;
+  border-radius: 5px;
+}
+.fc_strip .qpf td {
+  font-size: 80%;
+}
+.fc_strip .qsf td {
+  font-size: 80%;
+}
+.fc_strip .date td {
+  text-align: left;
+}
+.fc_strip .hour td {
+  font-size: 80%;
+}
+.fc_strip .clouds img {
+  width: 25px;
+  border: none;
+}
+.fc_strip .sun img {
+  width: 20px;
+  border: none;
+}
+.fc_strip .moon img {
+  width: 14px;
+  border: none;
+}
+.fc_strip .windDir img {
+  width: 15px;
+  border: none;
+}
+.fc_strip .legend-img {
+  width: 15px;
+  border: none;
+}
+.fc_strip .day {
+  font-weight: bold;
+}
+.fc_strip .tide_date {
+  font-size: 80%;
+}
+.fc_strip .sources {
+  font-size: 80%;
+  font-style: italic;
+  color: #aaaaaa;
+  padding-top: 1.5em;
+}

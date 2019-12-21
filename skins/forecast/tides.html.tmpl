@@ -1,0 +1,34 @@
+#errorCatcher Echo
+## forecast sampler skin for weewx - Copyright 2014 Matthew Wall
+## $Id: tides.html.tmpl 1583 2016-11-26 16:25:54Z mwall $
+#encoding UTF-8
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Forecast Sampler: Tides</title>
+  <link rel='stylesheet' type='text/css' href='forecast.css'/>
+</head>
+<body>
+
+#if $varExists('forecast')
+
+<h1>Tides</h1>
+<p>
+#set $tides = $forecast.xtides
+#if len($tides) > 0
+  #for $tide in $tides
+$tide.event_ts $tide.hilo $tide.offset<br/>
+  #end for
+#else
+Tide forecast is not available.
+#end if
+</p>
+
+#else
+
+<p>The forecast search list extension is not installed.</p>
+
+#end if
+
+</body>
+</html>

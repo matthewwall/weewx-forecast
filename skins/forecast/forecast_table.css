@@ -1,0 +1,123 @@
+/* styles for the forecast_table */
+.fc_table {
+}
+.fc_table td {
+  font-size: 90%;
+  text-align: left;
+}
+.fc_table .legend {
+}
+.fc_table .legend tr {
+  vertical-align: top;
+}
+.fc_table .summary {
+}
+.fc_table .summary tr {
+  vertical-align: top;
+}
+.fc_table .period {
+}
+.fc_table .col-outlook {
+  min-width: 36px;
+}
+.fc_table .col-date {
+  min-width: 36px;
+  cursor: pointer;
+}
+.fc_table .col-temp {
+  min-width: 30px;
+}
+.fc_table .col-dewpoint {
+  min-width: 30px;
+}
+.fc_table .col-humidity {
+  min-width: 30px;
+}
+.fc_table .col-wind {
+  min-width: 60px;
+  height: 48px;
+}
+.fc_table .col-pop {
+  min-width: 50px;
+}
+.fc_table .col-precip {
+}
+.fc_table .col-obvis {
+}
+.fc_table .col-tides {
+  min-width: 100px;
+  padding-right: 10px;
+}
+.fc_table .col-tides table {
+  padding-right: 5px;
+}
+.fc_table .col-sun {
+  min-width: 30px;
+  padding-right: 10px;
+}
+.fc_table .col-moon {
+  min-width: 30px;
+  padding-right: 5px;
+}
+.fc_table .col-moonphase {
+  min-width: 45px;
+  padding-right: 10px;
+}
+.fc_table .units {
+  color: #aaaaaa;
+}
+.fc_table .day {
+  font-size: 120%;
+  font-weight: bold;
+  color: #207020;
+}
+.fc_table .hour {
+  font-size: 80%;
+}
+.fc_table .date {
+  font-size: 80%;
+}
+.fc_table .temphi {
+  color: #ff4444;
+}
+.fc_table .templo {
+  color: #4444ff;
+}
+.fc_table .tide-hilo {
+  color: #aaaaaa;
+}
+.fc_table .windgust {
+  color: #aaaaaa;
+}
+.fc_table .winddir {
+  color: #aaaaaa;
+}
+.fc_table .winddir-img {
+  width: 32px;
+  border: none;
+}
+.fc_table .outlook-img {
+  width: 32px;
+  border: none;
+}
+.fc_table .legend-img {
+  width: 15px;
+  border: none;
+}
+.fc_table .pop-img {
+  width: 8px;
+  border: none;
+}
+.fc_table .precip-img {
+  width: 32px;
+  border: none;
+}
+.fc_table .obvis-img {
+  width: 32px;
+  border: none;
+}
+.fc_table .sources p {
+  font-size: 80%;
+  font-style: italic;
+  color: #aaaaaa;
+}

@@ -1,0 +1,620 @@
+498
+FOUS56 KSGX 012110
+PFMSGX
+
+POINT FORECAST MATRICES
+NATIONAL WEATHER SERVICE SAN DIEGO CA
+110 PM PST SUN JAN 1 2017
+
+CAZ552-021200-
+JOHN WAYNE AIRPORT-ORANGE CA
+33.68N 117.87W ELEV. 52 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      50          58          48          61          49
+TEMP             59 56 54 52 51 50 55 58 57 54 52 50 49 48 56 61 60 56 54 51 50
+DEWPT            48 47 45 44 44 45 47 45 44 44 44 42 42 44 47 48 48 49 49 48 47
+RH               67 72 71 74 77 83 74 62 62 69 74 74 77 86 72 62 64 77 83 89 89
+WIND DIR          S SW SW SW  S  S SW SW  W  W  E  E  E  E  W  W  W  W NE NE  E
+WIND SPD          8  5  5  5  4  3  3  8  6  1  4  5  4  4  2  2  4  4  2  2  2
+CLOUDS           SC SC B1 B1 B2 B2 B2 B2 SC SC SC SC B1 B1 SC SC SC SC SC SC B1
+POP 12HR                     30          20          10          10          10
+QPF 12HR                   0.01        0.01           0           0           0
+RAIN SHWRS        S  S  S  S  S  S
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          63      53    65      54    64      53    64      56    65
+TEMP          57 62 57   54 60 64 58   55 60 63 57   54 60 63 59   57 61 64
+DEWPT         49 52 51   51 50 52 51   51 52 53 54   53 53 54 54   55 55 55
+PWIND DIR         N       N    NE      NW    NE       W     E      NE     E
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      LT    LT
+AVG CLOUDS    B1 B1 B1   B1 B1 B1 B1   B1 SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR         10      10    10      10    10      10    40      40    40
+RAIN                                                     C  C  C    C  C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ554-021200-
+FULLERTON-ORANGE CA
+33.87N 117.98W ELEV. 95 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      50          58          48          61          49
+TEMP             60 56 53 52 50 51 55 58 57 53 51 50 48 49 56 61 60 56 53 51 49
+DEWPT            47 47 44 44 43 45 46 43 41 41 43 41 41 43 46 47 47 48 48 47 45
+RH               62 72 71 74 77 80 72 57 55 64 74 71 77 80 69 60 62 74 83 86 86
+WIND DIR          S SW SW  S SE SE  S SW SW SW  E  E  E  E NW NW  W  W NE NE NE
+WIND SPD          8  4  2  3  3  2  2  6  8  2  2  5  6  6  0  0  4  4  1  1  4
+CLOUDS           SC SC B1 B1 B2 B2 B2 B2 SC SC SC SC B1 B1 SC SC SC SC SC SC B1
+POP 12HR                     20          20          10          10          10
+QPF 12HR                   0.02        0.01        0.01           0           0
+RAIN SHWRS              S  S  S  S  S  S
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          64      52    66      53    66      53    65      55    67
+TEMP          59 63 56   52 61 65 57   53 61 65 57   53 61 64 58   55 63 66
+DEWPT         49 51 51   49 50 51 51   50 51 53 53   51 53 54 53   52 55 54
+PWIND DIR         N       S     E      NW    NE       W    NE      NE     E
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      GN    LT
+AVG CLOUDS    B1 B1 B1   B1 B1 B1 B1   B1 SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR         10      20    10      10    10      10    40      40    40
+RAIN                                                     C  C  C    C  C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ048-021200-
+ONTARIO-SAN BERNARDINO CA
+34.05N 117.58W ELEV. 942 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      46          54          43          58          46
+TEMP             55 52 49 47 46 46 50 54 53 49 46 44 43 43 51 57 57 53 50 47 46
+DEWPT            44 44 43 42 42 43 44 43 42 41 39 38 38 42 45 44 43 44 45 44 44
+RH               66 74 80 83 86 89 80 66 66 74 76 79 82 96 80 62 59 71 83 89 93
+WIND DIR         SW SW SW SW  S  E  S SW SW  W NE NE NE NE  S  S  W  W NE NE  E
+WIND SPD         11  4  3  3  2  1  1  5  6  3  2  3  5  5  2  2  3  3  1  1  3
+CLOUDS           SC SC B2 B2 B2 B2 B1 B1 B1 B1 SC SC B1 B1 SC SC SC SC SC SC B1
+POP 12HR                     30          30          10          10          10
+QPF 12HR                   0.02        0.02           0           0           0
+RAIN SHWRS        S  S  C  C  C  C  S  S
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          62      49    64      49    64      50    63      52    64
+TEMP          55 61 53   49 57 63 54   49 57 63 54   50 57 62 55   52 58 63
+DEWPT         48 47 49   47 48 45 48   48 49 47 50   49 50 50 52   51 53 50
+PWIND DIR        SE      SE     E      SE     E      SE    NE      SE     E
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      GN    LT
+AVG CLOUDS    B1 B1 B1   B1 B1 B1 B1   B1 SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR         10      10    10      10    10       5    30      40    40
+RAIN                                                     C  C  C    C  C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ048-021200-
+RIVERSIDE-RIVERSIDE CA
+33.95N 117.45W ELEV. 817 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      47          56          44          59          47
+TEMP             57 52 50 48 47 47 53 56 55 50 47 45 44 44 54 59 58 53 50 48 47
+DEWPT            45 44 44 44 44 44 44 44 43 42 41 40 40 42 44 44 44 44 45 44 43
+RH               64 74 80 86 89 89 71 64 64 74 79 82 86 93 69 57 59 71 83 86 86
+WIND DIR          W SW  W  S  S SE  W SW  W SW  E  E  E  E NW NW  W  W  E  E SE
+WIND SPD          9  1  2  2  2  2  1  4  4  3  1  2  3  3  1  1  4  4  2  2  3
+CLOUDS           SC SC B2 B2 B2 B2 B1 B1 B1 B1 SC SC B1 B1 SC SC SC SC SC SC SC
+POP 12HR                     30          30          20          10          10
+QPF 12HR                   0.02        0.02           0           0           0
+RAIN SHWRS        S  S  C  C  C  C  C  C
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          63      50    64      50    64      51    64      52    65
+TEMP          57 61 53   50 59 62 54   50 59 62 54   51 60 63 55   52 61 63
+DEWPT         47 47 48   47 47 46 48   46 49 47 50   48 49 50 51   49 51 49
+PWIND DIR         S       S     E       S     E       E    NE       E     E
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      GN    LT
+AVG CLOUDS    SC B1 B1   B1 B1 B1 B1   B1 SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR         10      10    10      10    10       5    30      40    40
+RAIN                                                     C  C  C    C  C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ048-021200-
+MARCH AIR FORCE BASE-RIVERSIDE CA
+33.90N 117.25W ELEV. 1539 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      43          52          40          57          42
+TEMP             54 49 47 45 43 43 50 52 51 46 44 42 40 41 52 57 55 50 46 44 42
+DEWPT            43 42 42 41 41 42 43 43 42 41 40 40 40 41 43 43 43 43 44 42 41
+RH               66 77 83 86 93 96 77 71 71 83 86 93100100 71 59 64 77 93 93 96
+WIND DIR          W  S  S  S SW SE  S  W  W  N  E  E  E  E SW SW NW NW  N  N SE
+WIND SPD          4  6  4  5  2  2  2  3  5  2  2  2  3  3  1  1  5  5  2  2  2
+CLOUDS           B1 B1 OV OV OV OV B2 B2 B1 B1 B1 B1 B1 B1 SC SC SC SC SC SC SC
+POP 12HR                     40          30          20          10          10
+QPF 12HR                   0.02        0.04           0           0           0
+RAIN SHWRS        S  S  C  C  C  C  C  C  S  S  S  S
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          60      46    62      46    62      47    62      49    63
+TEMP          55 59 50   46 58 60 51   46 58 60 51   47 58 61 53   49 59 62
+DEWPT         45 46 47   45 45 45 46   43 46 45 47   44 46 48 48   46 49 48
+PWIND DIR         S       N     N       S     N      SE     E       E     E
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      GN    LT
+AVG CLOUDS    SC B1 B1   B1 B1 B1 B1   B1 SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR         10      10    10      10    10       5    30      40    30
+RAIN                                                     C  C  C    C  C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ043-021200-
+CAMP PENDLETON-SAN DIEGO CA
+33.31N 117.35W ELEV. 79 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      48          58          44          61          44
+TEMP             58 53 52 50 48 48 55 57 56 51 49 46 44 45 56 60 59 52 50 46 44
+DEWPT            47 47 45 44 44 45 47 47 47 45 44 42 42 44 46 47 48 47 46 45 44
+RH               67 80 77 80 86 89 74 69 72 80 83 86 93 96 69 62 67 83 86 96100
+WIND DIR         SW SW SW SW SW SE SW SW  W  W NE NE NE NE  W  W  W  W NE NE NE
+WIND SPD         10  9  6  4  2  1  4  9  6  1  4  8  8  8  2  2  6  6  5  5  6
+CLOUDS           B1 B1 B2 B2 B2 B2 B2 B2 B1 B1 SC SC B1 B1 SC SC SC SC SC SC SC
+POP 12HR                     40          30          10          10          10
+QPF 12HR                   0.04        0.03           0           0           0
+RAIN SHWRS        C  C  C  C  C  C  S  S
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          64      48    65      48    65      48    66      51    67
+TEMP          58 62 53   48 60 63 54   48 60 63 54   48 60 64 56   51 62 65
+DEWPT         48 51 49   47 49 51 48   47 50 52 50   47 50 53 51   51 53 53
+PWIND DIR        NW       N    NE       S     N      SW    NE       S    SE
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      LT    LT
+AVG CLOUDS    SC SC B1   B1 B1 B1 B1   B1 SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR         10      10    10      10    10       5    30      30    40
+RAIN                                                     C  C  C    C  C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ043-021200-
+CARLSBAD-SAN DIEGO CA
+33.13N 117.28W ELEV. 328 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      50          58          48          60          48
+TEMP             58 54 53 51 50 50 56 57 56 53 51 50 48 49 57 59 58 54 52 50 48
+DEWPT            47 46 44 44 44 45 47 47 47 47 45 44 43 44 47 48 49 48 48 46 45
+RH               67 74 71 77 80 83 72 69 72 80 80 80 83 83 69 67 72 80 86 86 89
+WIND DIR         SW SW SW SW SW  S SW  W  W  N  E  E  E  E  W  W  W  W NE NE NE
+WIND SPD         10  8  8  5  3  4  4  8  5  2  4  6  6  6  3  3  5  5  3  3  4
+CLOUDS           B1 B1 B2 B2 B2 B2 B2 B2 B2 B2 B1 B1 B1 B1 SC SC SC SC SC SC SC
+POP 12HR                     40          30          20          10          10
+QPF 12HR                   0.04        0.05           0           0           0
+RAIN SHWRS        C  C  C  C  C  C  C  C  S  S
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          62      52    64      52    64      51    64      54    65
+TEMP          58 60 55   52 61 62 56   52 61 62 55   51 60 62 57   54 62 63
+DEWPT         48 51 50   48 50 51 50   48 51 52 52   49 51 54 52   50 54 54
+PWIND DIR         N       N    NE       N     N       W     E      SE    SE
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      LT    LT
+AVG CLOUDS    SC SC B1   B1 B1 B1 B1   B1 SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR         10      10    10      10    10       5    30      30    40
+RAIN                                                     C  C  C    C  C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ043-021200-
+OCEANSIDE-SAN DIEGO CA
+33.22N 117.35W ELEV. 30 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      49          58          46          60          46
+TEMP             58 55 53 51 49 49 56 57 57 53 50 48 46 46 57 59 59 54 51 49 46
+DEWPT            48 47 45 45 44 45 47 47 47 46 45 43 43 44 47 49 50 49 48 46 46
+RH               69 74 74 80 83 86 72 69 69 77 83 83 89 93 69 69 72 83 89 89100
+WIND DIR         SW  W SW SW SW  S SW  W  W  N NE NE NE NE  W  W  W  W NE NE NE
+WIND SPD          9  8  9  4  2  3  4  6  5  2  3  6  8  8  2  2  5  5  4  4  6
+CLOUDS           B1 B1 B2 B2 B2 B2 B2 B2 B1 B1 SC SC B1 B1 SC SC SC SC SC SC SC
+POP 12HR                     40          30          10          10          10
+QPF 12HR                   0.05        0.03           0           0           0
+RAIN SHWRS        C  C  C  C  C  C  S  S
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          62      50    64      50    64      50    64      53    65
+TEMP          58 61 54   50 61 63 55   50 61 63 55   50 61 63 57   53 62 64
+DEWPT         50 53 51   49 51 53 51   48 52 54 52   49 53 55 54   52 55 55
+PWIND DIR         N       N    NE       N     N       W    NE       S    SE
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      LT    LT
+AVG CLOUDS    SC SC B1   B1 B1 B1 B1   B1 SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR         10      10    10      10    10       5    30      30    40
+RAIN                                                     C  C  C    C  C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ043-021200-
+MIRAMAR-SAN DIEGO CA
+32.87N 117.14W ELEV. 482 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      49          58          46          60          47
+TEMP             56 53 51 50 49 49 55 57 56 51 49 47 46 46 55 60 57 53 50 49 47
+DEWPT            47 46 44 44 44 45 46 47 47 47 46 45 44 44 46 47 48 48 47 46 45
+RH               72 77 77 80 83 86 72 69 72 86 89 93 93 93 72 62 72 83 89 89 93
+WIND DIR         SW SW SW SW  S SE  S  W  W NE  E  E  E  E  W  W NW NW NE NE NE
+WIND SPD          9  6  5  3  1  4  3  6  5  2  5  5  6  6  2  2  5  5  4  4  3
+CLOUDS           B1 B1 OV OV B2 B2 B2 B2 OV OV B1 B1 B1 B1 SC SC SC SC SC SC SC
+POP 12HR                     40          40          20          10          10
+QPF 12HR                   0.03        0.02        0.03           0           0
+RAIN SHWRS        C  C  C  C  C  C  C  C  S  S
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          63      51    65      52    65      51    66      54    67
+TEMP          58 61 54   51 60 62 55   52 61 62 54   51 61 64 57   54 63 64
+DEWPT         48 50 50   49 49 50 49   49 51 51 51   50 51 52 52   52 53 53
+PWIND DIR         N       N     N       N     N      NW     E       S    SE
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      LT    LT
+AVG CLOUDS    SC SC B1   B1 B1 B1 B1   B1 SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR         10      10    10      10    10       5    20      20    40
+RAIN                                                     S  S  S    S  C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ043-021200-
+MONTGOMERY FIELD-SAN DIEGO CA
+32.81N 117.14W ELEV. 407 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      49          58          48          61          47
+TEMP             56 53 51 50 49 49 55 58 56 52 50 49 48 48 56 61 58 53 50 49 47
+DEWPT            47 46 44 44 44 45 47 47 47 47 46 45 44 45 46 47 48 48 48 47 46
+RH               72 77 77 80 83 86 74 67 72 83 86 86 86 89 69 60 69 83 93 93 96
+WIND DIR         SW SW SW SW  S  S  S SW  W  N  E NE NE NE  W  W NW NW NE NE NE
+WIND SPD          9  6  5  3  2  4  3  6  5  2  4  4  5  5  2  2  5  5  4  4  4
+CLOUDS           B1 B1 B2 B2 B2 B2 B2 B2 B2 B2 B1 B1 B1 B1 SC SC SC SC SC SC SC
+POP 12HR                     40          40          20          10          10
+QPF 12HR                   0.03        0.03        0.02           0           0
+RAIN SHWRS        C  C  C  C  C  C  C  C  S  S
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          63      51    65      53    65      52    67      55    67
+TEMP          57 61 54   51 60 63 56   53 61 62 55   52 61 65 58   55 63 65
+DEWPT         48 50 51   49 49 51 50   49 51 52 52   50 51 53 53   52 54 53
+PWIND DIR         N       N     N       N     N      NW     E       S    SE
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      LT    LT
+AVG CLOUDS    SC SC B1   B1 B1 B1 B1   B1 SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR         10      10    10      10    10       5    20      20    40
+RAIN                                                     S  S  S    S  C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ043-021200-
+SAN DIEGO LINDBERGH FIELD-SAN DIEGO CA
+32.73N 117.18W ELEV. 30 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      52          58          49          61          50
+TEMP             58 55 55 53 53 52 56 57 57 53 53 50 50 49 58 60 60 55 55 52 51
+DEWPT            48 47 45 44 44 45 47 48 48 48 47 46 45 45 46 48 49 49 49 48 47
+RH               69 74 69 71 71 77 72 72 72 83 80 86 83 86 64 64 67 80 80 86 86
+WIND DIR         SW SW  W SW SW SE  S SW  W  N  E NE NE NE  W  W NW NW NE NE NE
+WIND SPD          9  6  5  3  2  4  5  6  5  2  3  4  4  4  2  2  5  5  4  4  4
+CLOUDS           B1 B1 B2 B2 B2 B2 B2 B2 B1 B1 B1 B1 B1 B1 SC SC SC SC SC SC SC
+POP 12HR                     40          40          20          10          10
+QPF 12HR                   0.03        0.05        0.03           0           0
+RAIN SHWRS        C  C  C  C  C  C  C  C  S  S
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          63      54    65      54    65      54    65      56    66
+TEMP          59 62 58   55 62 64 59   55 62 64 59   55 62 64 60   57 63 65
+DEWPT         48 51 51   51 49 51 51   50 51 52 53   51 50 53 53   53 52 53
+PWIND DIR         N       N    NE       N     N      NW     E       S    SE
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      LT    LT
+AVG CLOUDS    SC SC B1   B1 B1 B1 B1   B1 SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR         10      10    10      10    10       5    20      20    40
+RAIN                                                     S  S  S    S  C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ043-021200-
+IMPERIAL BEACH-SAN DIEGO CA
+32.56N 117.11W ELEV. 26 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      52          59          50          60          50
+TEMP             59 56 54 54 53 52 58 58 58 54 52 52 51 51 59 60 59 55 53 52 51
+DEWPT            47 47 46 44 44 46 47 49 50 49 48 47 47 46 47 48 49 49 49 48 47
+RH               64 72 74 69 71 80 67 72 75 83 86 83 86 83 64 64 69 80 86 86 86
+WIND DIR         SW  W SW SW SW SE SW SW  W  N  E  E  E  E NW NW NW NW NE NE NE
+WIND SPD         10  8  6  5  3  5  5  5  4  2  3  4  5  5  3  3  6  6  4  4  3
+CLOUDS           B1 B1 B1 B1 B1 B1 B2 B2 B1 B1 B1 B1 B1 B1 B1 B1 SC SC SC SC SC
+POP 12HR                     40          30          20          10          10
+QPF 12HR                   0.05        0.07           0           0           0
+RAIN SHWRS        C  C  C  C  C  C  C  C  S  S  S  S
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          63      53    65      54    65      53    65      55    66
+TEMP          61 62 56   54 63 63 57   55 64 63 56   54 63 64 58   56 65 64
+DEWPT         49 51 51   50 50 52 50   50 52 53 52   50 51 54 53   52 53 54
+PWIND DIR         N       N     N       N     N      NW    SE       S    SE
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      GN    GN
+AVG CLOUDS    SC SC B1   B1 B1 B1 B1   B1 SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR         10      10    10      10    10       5    20      10    40
+RAIN                                                     S  S          C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ043-021200-
+BROWN FIELD-SAN DIEGO CA
+32.58N 116.98W ELEV. 525 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      49          58          47          61          47
+TEMP             57 53 51 50 49 50 55 58 56 51 50 48 47 48 56 61 58 52 50 49 47
+DEWPT            47 46 45 44 44 45 47 48 49 48 46 45 44 45 47 48 48 49 49 47 47
+RH               69 77 80 80 83 83 74 69 77 89 86 89 89 89 72 62 69 89 96 93100
+WIND DIR         SW SW  S  S SE SE  S  W  W  N  E NE  E  E  W  W NW NW NE NE  E
+WIND SPD          8  4  3  4  5  5  4  8  5  2  3  4  3  3  3  3  5  5  4  4  2
+CLOUDS           B1 B1 B2 B2 OV OV B2 B2 B1 B1 B2 B2 B1 B1 SC SC SC SC SC SC SC
+POP 12HR                     40          40          20          10          10
+QPF 12HR                   0.04        0.05           0           0           0
+RAIN SHWRS        C  C  C  C  C  C  C  C  S  S  S  S
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          64      51    66      52    66      52    68      54    68
+TEMP          58 61 54   51 61 63 55   52 61 63 55   52 62 65 57   54 63 65
+DEWPT         49 51 51   50 49 51 51   49 51 52 53   49 52 53 53   51 54 53
+PWIND DIR        NE       N    NE       N    NE      NW     E       S     E
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      LT    LT
+AVG CLOUDS    SC SC B1   B1 B1 B1 B1   B1 SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR         10      10    10      10    10       5    20      10    40
+RAIN                                                     S  S          C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ050-021200-
+RAMONA-SAN DIEGO CA
+33.04N 116.92W ELEV. 1394 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      43          54          41          58          40
+TEMP             52 47 45 44 43 43 51 54 52 46 44 42 41 42 54 58 56 48 45 42 41
+DEWPT            44 44 42 42 42 43 44 46 47 45 43 41 40 42 45 46 47 46 45 42 41
+RH               74 89 89 93 96100 77 74 83 96 96 96 96100 71 64 72 93100100100
+WIND DIR         SW SW SW SW  S  S  S SW  W  W  E  E  E  E  W  W  W  W NE NE  E
+WIND SPD         12  9  9  6  5  6  8  9  8  3  3  4  5  5  3  3  5  5  2  2  3
+CLOUDS           B1 B1 OV OV OV OV B2 B2 B2 B2 B2 B2 B2 B2 SC SC SC SC SC SC SC
+POP 12HR                     50          40          20          10          10
+QPF 12HR                   0.06        0.07        0.01           0           0
+RAIN SHWRS        C  C  C  C  C  C  C  C  S  S  S  S
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          62      43    65      44    65      44    66      45    66
+TEMP          57 59 47   43 60 62 49   45 60 62 49   45 61 63 50   46 61 63
+DEWPT         48 50 47   43 48 49 47   44 49 50 47   44 50 52 48   45 53 51
+PWIND DIR         N       N     N       N    NW      SW     E       S    SE
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      LT    LT
+AVG CLOUDS    SC SC B1   B1 B1 B1 B1   B1 SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR         10      10    10      10    10       5    20      20    40
+RAIN                                                     S  S  S    S  C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ058-021200-
+CAMPO-SAN DIEGO CA
+32.63N 116.47W ELEV. 2631 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      40          50          39          55          40
+TEMP             46 42 42 41 41 41 47 49 47 42 41 41 40 40 50 54 51 44 43 42 41
+DEWPT            41 41 39 39 39 40 41 43 43 42 40 38 37 38 40 42 43 42 41 39 39
+RH               83 96 89 92 92 96 79 80 86100 96 89 89 92 68 64 74 93 93 89 92
+WIND DIR         SW  W SW SW SW SW SW SW SW  W  W  W  W  W SW SW  W  W  N  N NE
+WIND SPD         18 14 14 10  8 10 12 11 12  6  4  5  1  1  4  4  6  6  0  0  2
+WIND GUST        28
+CLOUDS           B1 B1 OV OV B2 B2 B2 B2 OV OV B2 B2 B1 B1 SC SC B1 B1 SC SC SC
+POP 12HR                     30          30          30          10          10
+QPF 12HR                   0.03        0.02        0.03           0           0
+RAIN SHWRS        C  C  C  C  C  C  C  C  C  C  S  S
+WIND              Y  Y  Y  Y  Y  Y  Y  Y  Y
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          59      41    61      42    61      43    63      43    63
+TEMP          53 54 45   42 55 56 46   44 55 56 47   44 57 58 47   45 57 58
+DEWPT         43 46 42   41 42 45 41   39 42 45 41   38 42 46 41   38 45 46
+PWIND DIR        NE       W    NE       W    SW      SW     S      SW    SW
+WIND CHAR        LT      LT    LT      GN    GN      GN    LT      GN    LT
+AVG CLOUDS    SC SC SC   SC SC SC SC   SC SC SC SC   SC B1 B1 B1   B1 B2 B2
+POP 12HR          5      10    10      10     5       5    20      10    50
+RAIN                                                     S  S          C  C
+RAIN SHWRS           C    C
+
+$$
+CAZ061-021200-
+PALM SPRINGS-RIVERSIDE CA
+33.83N 116.50W ELEV. 479 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      47          61          46          62          48
+TEMP             63 56 53 50 48 47 56 60 60 54 51 49 47 46 56 60 61 55 53 50 49
+DEWPT            43 43 43 43 43 44 45 44 42 41 40 38 37 40 43 44 44 45 46 44 43
+RH               48 62 69 77 83 89 66 55 51 61 66 66 68 79 62 55 53 69 77 80 80
+WIND DIR          W  N  N NW NW  W  W SW  W NW NW  W  W  W SE SE  S  S  N  N NW
+WIND SPD          3  4  1  3  3  5  2  4 10  8  4  3  2  2  4  4  2  2  4  4  3
+CLOUDS           SC SC SC SC SC SC SC SC SC SC SC SC SC SC SC SC SC SC SC SC SC
+POP 12HR                      5           5           5          10          10
+QPF 12HR                      0           0           0           0           0
+WIND              Y  Y  Y  Y  Y  Y  Y  Y  Y
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          65      50    68      50    67      51    67      53    69
+TEMP          59 64 55   51 62 67 56   51 61 66 57   52 61 66 58   54 63 68
+DEWPT         45 47 48   46 44 44 44   43 44 44 45   44 45 48 49   48 49 49
+PWIND DIR        NE       W    NE      SW     W      SW    SW       W     W
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      LT    LT
+AVG CLOUDS    SC SC B1   B1 SC SC SC   SC SC SC SC   SC SC SC B1   B1 B2 B2
+POP 12HR         10       5     5       5     5       5    30      30    20
+RAIN                                                     C  C  C    C  S  S
+
+$$
+CAZ061-021200-
+THERMAL-RIVERSIDE CA
+33.63N 116.17W ELEV. 112 FT
+110 PM PST SUN JAN 1 2017
+
+DATE          SUN 01/01/17      MON 01/02/17            TUE 01/03/17         WED
+PST 3HRLY     13 16 19 22 01 04 07 10 13 16 19 22 01 04 07 10 13 16 19 22 01 04
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      46          63          44          63          43
+TEMP             64 54 51 49 48 46 58 62 62 52 49 47 46 44 57 62 62 51 48 46 45
+DEWPT            43 42 42 43 43 45 46 44 42 42 42 40 39 42 45 47 47 46 46 44 43
+RH               46 64 71 80 83 96 64 52 48 69 77 76 76 93 64 58 58 83 93 93 93
+WIND DIR          W  W  N  N  N  N  N SE  N  N  N NW NW NW SE SE  S  S NW NW NW
+WIND SPD          8  8 13 12  9 10  8  4  2 13 11  8  1  1  5  5  2  2  5  5  3
+CLOUDS           FW FW SC SC SC SC SC SC SC SC SC SC SC SC SC SC SC SC SC SC SC
+POP 12HR                      0           0           0           5          10
+QPF 12HR                      0           0           0           0           0
+WIND              Y  Y  Y  Y  Y  Y  Y  Y  Y
+
+
+DATE           01/04/17  THU 01/05/17  FRI 01/06/17  SAT 01/07/17  SUN 01/08/17
+PST 6HRLY     10 16 22   04 10 16 22   04 10 16 22   04 10 16 22   04 10 16
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          67      44    69      45    68      45    68      46    70
+TEMP          60 66 50   47 62 68 51   48 61 67 51   48 61 67 52   49 63 69
+DEWPT         47 49 47   45 45 45 44   42 45 45 46   44 47 49 48   47 51 49
+PWIND DIR        SW      NE     W      SW    NE       E    NE      NE     N
+WIND CHAR        LT      LT    LT      LT    LT      LT    LT      LT    LT
+AVG CLOUDS    SC SC SC   SC SC SC SC   SC SC SC SC   SC SC SC SC   SC B1 B1
+POP 12HR          5       5     5       5     5       5    20      20    20
+RAIN                                                     S  S  S    S  S  S
+
+$$

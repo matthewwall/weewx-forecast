@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" /><title>National Weather Service Text Product Display</title>
+<meta name="DC.title" content="National Weather Service Text Product Display" />
+<meta name="DC.description" content="National Weather Service is your source for the most complete weather forecast and weather related information on the web" />
+<meta name="DC.creator" content="US Department of Commerce, NOAA, National Weather Service" />
+<meta name="DC.date.created" scheme="ISO8601" content="2016-11-15" />
+<meta name="DC.date.reviewed" scheme="ISO8601" content="2013-12-11" />
+<meta name="DC.language" scheme="DCTERMS.RFC1766" content="EN-US" />
+<meta name="DC.keywords" content="weather, local weather forecast, local forecast, weather forecasts, local weather, radar, fire weather, center weather service units, hamweather" />
+<meta name="DC.publisher" content="NOAA's National Weather Service" />
+<meta name="DC.contributor" content="National Weather Service" />
+<meta name="DC.rights" content="http://www.weather.gov/disclaimer.php" />
+<meta name="rating" content="General" />
+<meta name="robots" content="index,follow" />
+<meta name="Distribution" content="Global" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<link href="/css/default/secondary.css" title="nwsstyle" rel="stylesheet" type="text/css" media="all" />
+<link href="/css/product/main.css" title="nwsstyle" rel="stylesheet" type="text/css" media="all"></head>
+<body>
+<div id="container"><a href="#skipnav" class="skip">Skip Navigation</a>
+<a name="skipnav"></a>
+<div id="local"> <div id="localcontent">
+<!-- // CONTENT STARTS HERE -->
+
+<span style="font-size: 20px; font-weight:bold;">Point Forecast Matrices </span><br />Issued by NWS Bismarck, ND<br /><br /><div><b>Current Version</b>&nbsp;|&nbsp;<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=2&glossary=0">Previous Version</a>&nbsp;|&nbsp;<a href="?site=NWS&issuedby=BIS&product=PFM&format=ci&version=1&glossary=0">Graphics & Text</a>&nbsp;|&nbsp;<a href="javascript:window.print()">Print</a>&nbsp;|&nbsp;<a href="product_types.php?site=NWS">Product List</a>&nbsp;|&nbsp;<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=1&glossary=1">Glossary On</a></div><div>Versions: <b>1</b> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=2&glossary=0">2</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=3&glossary=0">3</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=4&glossary=0">4</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=5&glossary=0">5</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=6&glossary=0">6</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=7&glossary=0">7</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=8&glossary=0">8</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=9&glossary=0">9</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=10&glossary=0">10</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=11&glossary=0">11</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=12&glossary=0">12</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=13&glossary=0">13</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=14&glossary=0">14</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=15&glossary=0">15</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=16&glossary=0">16</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=17&glossary=0">17</a> 
+<a href="?site=NWS&issuedby=BIS&product=PFM&format=TXT&version=18&glossary=0">18</a> <hr size="1" width="520"noshade="noshade" align="left" /></div><pre class="glossaryProduct">
+000
+FOUS53 KBIS 052327
+PFMBIS
+
+POINT FORECAST MATRICES
+NATIONAL WEATHER SERVICE BISMARCK ND
+527 PM CST SUN FEB 5 2017
+
+NDZ015-061000-
+BISMARCK/MANDAN-BURLEIGH/MORTON ND
+46.79N 100.78W ELEV. 501 FT
+527 PM CST SUN FEB 5 2017
+
+DATE           02/05/17      MON 02/06/17            TUE 02/07/17            WED
+CST 3HRLY     15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      14          18           5           7          -9
+TEMP             15 15 15 15 14 14 17 18 14 12 10  9  7  5  6  6  4  0 -5 -7 -8
+DEWPT             9 10  8  9  8  8  9 10  8  8  5  5  1  0 -1  0 -4 -8-11-13-13
+RH               77 80 73 77 76 76 70 70 76 84 80 83 76 79 72 76 68 68 74 74 78
+WIND DIR         SE SE SE NE NE NE NE NE NE NE NE  N  N  N NW NW NW NW NW NW NW
+WIND SPD         10  6  4  4  6 10 12 13 12 10 10  9 10  8 10 11  9  6  5  5  6
+CLOUDS           B2 B2 B1 B1 B2 B2 OV OV OV OV OV OV OV B2 B2 B1 B1 SC B1 B1 B1
+POP 12HR                     10          30          50          30           5
+QPF 12HR                      0           0        0.03           0           0
+SNOW 12HR                 00-00       00-00           1
+SNOW                                S  S  C  C  C  C  C  C
+WIND CHILL        2  5  8  8  4  1  4  4  0 -1 -4 -4 -8 -8 -9-10-10-13-17-20-23
+MIN CHILL         2     3     4     1     0    -4    -8    -9   -10   -17   -23
+
+
+DATE           02/08/17  THU 02/09/17  FRI 02/10/17  SAT 02/11/17  SUN 02/12/17
+CST 6HRLY     12 18 00   06 12 18 00   06 12 18 00   06 12 18 00   06 12 18
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN           4      -7    23      19    40      21    30      18    31
+TEMP          -2  0 -7   -4 14 22 21   26 36 36 27   21 26 27 21   18 27 29
+DEWPT         -9 -8-11   -6  8 15 18   24 30 30 25   19 22 20 16   16 19 19
+PWIND DIR        NW      SW     S       S     W       W    NW      NW    NW
+WIND CHAR        LT      LT    GN      LT    GN      GN    GN      GN    GN
+AVG CLOUDS    B1 SC FW   SC SC B1 B2   B2 B2 B1 SC   SC SC B1 B1   B1 SC SC
+POP 12HR          5      10    10       5     5       0     5       0     5
+SNOW                      S
+
+$$
+NDZ033-061000-
+DICKINSON-STARK ND
+46.80N 102.81W ELEV. 790 FT
+427 PM MST SUN FEB 5 2017
+
+DATE          SUN 02/05/17      MON 02/06/17            TUE 02/07/17         WED
+MST 3HRLY     14 17 20 23 02 05 08 11 14 17 20 23 02 05 08 11 14 17 20 23 02 05
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      16          18           3           6         -11
+TEMP             19 19 19 18 17 15 16 18 13 11 10  7  4  6  6  4  1 -5 -8-10-10
+DEWPT            14 14 13 12 10  7  7  9  7  8  5  5  1  0 -2 -2 -5-10-12-13-13
+RH               80 80 77 77 73 70 67 67 76 87 80 91 87 76 69 75 75 78 82 86 86
+WIND DIR          S  S SW  N NE NE  E  E  E  E NE NE  N NW NW NW NW NW NW NW NW
+WIND SPD         11  8  4  9 12 12 13 14 12 11 10  9  9  8 13 13 10  9  9  5  8
+CLOUDS           B2 B2 SC SC B2 OV OV OV OV OV OV OV B2 B2 B2 B1 B1 SC B1 B1 B2
+POP 12HR                     10          40          60          20           5
+QPF 12HR                      0           0        0.04           0           0
+SNOW 12HR                 00-00       00-00           1
+SNOW                                S  S  C  C  L  L  S  S
+WIND CHILL        7  9 12  7  4  1  2  4 -1 -3 -4 -7-10 -7-11-14-15-21-25-23-26
+MIN CHILL         6     7     4     0    -1    -5   -10   -11   -15   -25   -26
+
+
+DATE           02/08/17  THU 02/09/17  FRI 02/10/17  SAT 02/11/17  SUN 02/12/17
+MST 6HRLY     11 17 23   05 11 17 23   05 11 17 23   05 11 17 23   05 11 17
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN           3      -4    31      27    43      24    31      17    31
+TEMP          -2 -2 -3    1 21 31 30   34 41 39 30   26 28 28 20   17 26 29
+DEWPT         -8 -7 -7   -1 16 22 26   28 33 31 24   20 21 20 16   15 18 19
+PWIND DIR        NW      SW    SW      SW     W       W     W       W     W
+WIND CHAR        GN      GN    GN      GN    BZ      GN    BZ      GN    BZ
+AVG CLOUDS    B2 SC SC   SC SC B1 B2   B2 B2 B1 SC   SC SC SC SC   SC SC SC
+POP 12HR         10      10     0       5    10       5     5       5     5
+SNOW                      S
+
+$$
+NDZ044-061000-
+HETTINGER-ADAMS ND
+45.99N 102.63W ELEV. 824 FT
+427 PM MST SUN FEB 5 2017
+
+DATE          SUN 02/05/17      MON 02/06/17            TUE 02/07/17         WED
+MST 3HRLY     14 17 20 23 02 05 08 11 14 17 20 23 02 05 08 11 14 17 20 23 02 05
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      18          19           6          11          -9
+TEMP             19 19 20 19 18 18 18 19 18 15 14 12  8  6 10 10  4 -2 -5 -8 -8
+DEWPT            16 16 16 16 13 10 12 13 12 11  8  9  5  5  3  4 -1 -6 -9-10-11
+RH               88 88 84 88 80 70 77 77 77 84 76 87 87 96 73 76 79 82 82 91 86
+WIND DIR          S  S SW NW  N NE NE  E  E  E NE  N  N NW NW NW NW NW NW NW NW
+WIND SPD          8  6  5  6 10 12 12 13 10  9  8  8 11 10 14 14 10  6  6  4  8
+CLOUDS           B1 B2 B1 B1 B1 B2 OV OV OV OV OV OV OV B2 B1 B1 B1 SC B1 B1 B2
+POP 12HR                      5          20          50          20           5
+QPF 12HR                      0           0        0.01           0           0
+SNOW 12HR                 00-00       00-00           T
+SNOW                                      S  S  C  C  S  S                    S
+WIND CHILL        9 10 12 10  6  5  5  6  6  3  3  0 -7 -9 -7 -7-11-15-19-19-24
+MIN CHILL         8     9     6     5     2     2    -7   -10   -11   -19   -24
+
+
+DATE           02/08/17  THU 02/09/17  FRI 02/10/17  SAT 02/11/17  SUN 02/12/17
+MST 6HRLY     11 17 23   05 11 17 23   05 11 17 23   05 11 17 23   05 11 17
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN           7      -3    31      28    45      25    34      18    31
+TEMP           1 -2 -2    3 22 29 32   36 43 41 31   28 32 29 21   18 27 28
+DEWPT         -4 -3 -5    0 17 23 26   29 33 31 24   22 24 21 17   16 19 20
+PWIND DIR        NW      SW    SW      SW     W       W     W      NW    NW
+WIND CHAR        GN      LT    GN      GN    BZ      GN    GN      GN    BZ
+AVG CLOUDS    B2 B1 SC   SC SC B1 B1   B2 B1 B1 SC   SC SC SC SC   SC SC SC
+POP 12HR         20      10     0       5     5       0     5       5     5
+SNOW           S     S    S
+
+$$
+NDZ011-061000-
+MINOT-WARD ND
+48.28N 101.27W ELEV. 523 FT
+527 PM CST SUN FEB 5 2017
+
+DATE           02/05/17      MON 02/06/17            TUE 02/07/17            WED
+CST 3HRLY     15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      10          11          -3           2         -14
+TEMP             13 12 12 12 11 10 11 11  8  4  3  2 -1 -3  0  2 -1 -6 -9-11-14
+DEWPT             6  7  7  5  3  1  2  2  2  0 -3 -4 -6 -9 -6 -5 -9-12-14-18-19
+RH               73 80 80 73 69 66 66 66 76 83 75 75 79 75 75 72 68 74 78 70 77
+WIND DIR          E  E NE  N  N NE NE NE NE NE NE  N  N NW NW NW NW  W  W  W  W
+WIND SPD          8  6  8  9 11 12 13 14 14 12 10  8  9  8 10 12 10 10 10  8 10
+CLOUDS           OV OV OV OV OV OV OV OV OV OV OV OV OV B2 B2 B1 B1 B1 B1 SC SC
+POP 12HR                     30          70          80          30           0
+QPF 12HR                   0.01        0.03        0.11           0           0
+SNOW 12HR                     T           1           2
+SNOW              S  C  C  C  S  S  C  C  D  D  C  C  C  C
+WIND CHILL        2  1  0  0 -3 -5 -5 -5 -9-13-12-12-16-18-16-15-17-24-27-28-34
+MIN CHILL         1     0    -3    -5    -9   -13   -16   -18   -17   -27   -34
+WINTER WEATH      Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y
+
+
+DATE           02/08/17  THU 02/09/17  FRI 02/10/17  SAT 02/11/17  SUN 02/12/17
+CST 6HRLY     12 18 00   06 12 18 00   06 12 18 00   06 12 18 00   06 12 18
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN           0      -8    21      16    34      16    25      16    28
+TEMP          -4 -6 -8   -6 12 17 21   24 32 31 26   17 23 23 19   17 23 26
+DEWPT        -13-11-13   -8  5 12 16   19 27 24 19   14 18 15 14   13 17 17
+PWIND DIR         W      SW    SW       S     W      NW    NW       W    NW
+WIND CHAR        GN      GN    GN      GN    GN      GN    GN      GN    BZ
+AVG CLOUDS    SC FW FW   SC SC B1 B2   OV B2 B1 B1   B1 B1 B1 B1   B1 SC SC
+POP 12HR          0      10    10      20    30      20    10       5     5
+SNOW                      S  S     S       C          S
+
+$$
+NDZ037-061000-
+JAMESTOWN-STUTSMAN ND
+46.93N  98.68W ELEV. 457 FT
+527 PM CST SUN FEB 5 2017
+
+DATE           02/05/17      MON 02/06/17            TUE 02/07/17            WED
+CST 3HRLY     15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      10          17           4           6         -10
+TEMP             12 12 12 13 11 11 15 17 14 11 11  9  6  5  5  6  1 -2 -4 -8 -9
+DEWPT             8  8  8  9  8  8 10 11  9  8  6  5  1  0 -1 -1 -3 -8-10-11-13
+RH               84 84 84 84 87 87 80 77 80 87 80 83 79 79 76 72 83 75 75 86 82
+WIND DIR         SE SE SE  E NE NE NE NE NE NE NE  N  N  N NW NW NW NW NW NW NW
+WIND SPD         11 10  8  5  8 12 17 18 16 13 13 12 16 14 17 17 14 12 10 10 10
+CLOUDS           B2 B2 B2 B2 B2 OV OV OV OV OV OV OV OV B2 B2 B1 B1 B1 SC SC SC
+POP 12HR                      5          30          50          40           0
+QPF 12HR                      0           0        0.03           0           0
+SNOW 12HR                 00-00       00-00           T
+SNOW                                      C  C  C  C  C  C
+OBVIS                              BS BS                   BS BS
+WIND CHILL       -2 -1  0  4 -1 -4 -1  1 -2 -5 -5 -7-12-13-14-13-18-20-21-26-27
+MIN CHILL        -3    -2    -1    -4    -3    -5   -12   -15   -18   -21   -27
+
+
+DATE           02/08/17  THU 02/09/17  FRI 02/10/17  SAT 02/11/17  SUN 02/12/17
+CST 6HRLY     12 18 00   06 12 18 00   06 12 18 00   06 12 18 00   06 12 18
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN           3      -9    19      16    35      18    27      15    27
+TEMP          -2 -2 -9   -8  9 16 19   24 32 29 22   18 23 24 19   16 21 24
+DEWPT         -8 -8-12   -8  5 12 16   21 28 29 22   17 21 19 15   14 17 17
+PWIND DIR         W       W    SW       S    SW      NW    NW      NW    NW
+WIND CHAR        GN      GN    GN      GN    GN      GN    GN      GN    BZ
+AVG CLOUDS    SC FW FW   FW SC SC B1   B2 B2 B1 B1   SC B1 B1 B1   B1 B1 SC
+POP 12HR          5      10    10       5     5       5    10       5     5
+SNOW                         S
+
+$$
+NDZ001-061000-
+WILLISTON-WILLIAMS ND
+48.17N 103.59W ELEV. 604 FT
+527 PM CST SUN FEB 5 2017
+
+DATE           02/05/17      MON 02/06/17            TUE 02/07/17            WED
+CST 3HRLY     15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      11          12          -1           4         -16
+TEMP             16 14 14 13 12 10 10 12 10  9  6  5  2 -2  2  4  0 -7-10-14-15
+DEWPT             9  9  8  6  3  0  1  3  3  2  0 -1 -5 -8 -6 -5 -8-13-16-18-19
+RH               73 80 76 73 66 63 66 66 73 72 76 76 72 75 68 65 68 74 74 81 81
+WIND DIR          E NE  N NE NE NE NE  E  E  E NE NE  N  N NW NW NW NW NW  W  W
+WIND SPD          6  6 10 12 12 12 13 13 13 11  9  6  6  5  9 11  8  5  6  4  6
+CLOUDS           OV OV OV OV OV OV OV OV OV OV OV B2 B2 B2 B2 B1 B1 B1 B1 SC B1
+POP 12HR                     30          80          80          20           5
+QPF 12HR                   0.01        0.08        0.09           0           0
+SNOW 12HR                     T           1           2
+SNOW              C  C  S  S  C  C  L  L  D  D  C  C  S  S
+WIND CHILL        6  4  1 -1 -3 -5 -6 -3 -6 -6 -8 -7-11-14-13-12-14-20-25-26-31
+MIN CHILL         5     1    -3    -6    -6    -8   -11   -14   -14   -25   -31
+WINTER WEATH      Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y  Y
+
+
+DATE           02/08/17  THU 02/09/17  FRI 02/10/17  SAT 02/11/17  SUN 02/12/17
+CST 6HRLY     12 18 00   06 12 18 00   06 12 18 00   06 12 18 00   06 12 18
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN           0      -9    26      22    38      18    28      15    30
+TEMP          -7 -5 -9   -5 12 25 25   30 35 35 27   20 24 25 19   16 23 28
+DEWPT        -13-10-12   -7 10 18 23   25 30 27 20   16 17 17 15   13 18 20
+PWIND DIR         W      SW    SW       S     W       W     W       W     W
+WIND CHAR        GN      LT    GN      GN    GN      GN    GN      GN    GN
+AVG CLOUDS    SC FW FW   SC SC B1 B2   OV B2 B1 SC   B1 B1 B1 B1   SC SC SC
+POP 12HR          0      10     5      20    20      20     5       5     5
+SNOW                      S             S  S          S
+
+$$
+NDZ021-061000-
+GARRISON-MCLEAN ND
+47.62N 101.39W ELEV. 590 FT
+527 PM CST SUN FEB 5 2017
+
+DATE           02/05/17      MON 02/06/17            TUE 02/07/17            WED
+CST 3HRLY     15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      10          12          -2           2         -15
+TEMP             13 13 12 11 11 10 11 12  9  5  3  2  0 -2 -1  2  0 -7 -9-12-14
+DEWPT             6  7  5  5  3  3  2  3  3  2 -1 -3 -6 -8 -6 -5 -7-13-15-19-19
+RH               73 76 73 76 69 73 66 66 76 87 83 79 75 75 79 72 71 74 74 70 77
+WIND DIR         SE SE NE NE NE NE NE NE  E  E NE NE  N  N NW NW NW NW NW  W  W
+WIND SPD         10  8  5 10 13 14 16 16 16 14 12 10 10  8 11 13 10  9  9  6  9
+CLOUDS           B2 B2 B2 B2 OV OV OV OV OV OV OV OV OV B1 B2 B1 B1 B1 B1 SC B1
+POP 12HR                     20          60          70          30           5
+QPF 12HR                      0        0.01        0.08           0           0
+SNOW 12HR                 00-00           T           1
+SNOW                    S        S  C  C  L  L  C  C  C  C
+WIND CHILL        0  2  3 -3 -5 -7 -6 -5 -8-13-14-14-16-17-18-16-16-24-26-27-32
+MIN CHILL        -1     1    -5    -7    -8   -14   -16   -19   -17   -26   -32
+
+
+DATE           02/08/17  THU 02/09/17  FRI 02/10/17  SAT 02/11/17  SUN 02/12/17
+CST 6HRLY     12 18 00   06 12 18 00   06 12 18 00   06 12 18 00   06 12 18
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN          -1     -10    21      17    35      17    26      14    27
+TEMP          -6 -6-10   -7  9 17 21   25 31 32 23   18 22 23 18   15 21 24
+DEWPT        -12-11-14   -9  6 13 17   21 28 27 20   16 18 17 13   13 17 17
+PWIND DIR         W      SW    SW       S     W       W    NW       W    NW
+WIND CHAR        GN      GN    GN      GN    BZ      GN    GN      GN    BZ
+AVG CLOUDS    SC FW FW   SC SC B1 B2   B2 B2 B1 SC   SC B1 B1 B1   SC SC SC
+POP 12HR          5      10    10       5    10      10    10       0     5
+SNOW                      S
+
+$$
+NDZ043-061000-
+BOWMAN-BOWMAN ND
+46.18N 103.40W ELEV. 902 FT
+427 PM MST SUN FEB 5 2017
+
+DATE          SUN 02/05/17      MON 02/06/17            TUE 02/07/17         WED
+MST 3HRLY     14 17 20 23 02 05 08 11 14 17 20 23 02 05 08 11 14 17 20 23 02 05
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      19          20           7          10          -9
+TEMP             23 24 23 22 20 19 19 20 19 16 16 14  9  9  9  8  3 -2 -7 -9 -9
+DEWPT            20 20 20 19 14 12 11 14 12 11  9 10  5  4  3  3 -1 -7-10-10-10
+RH               88 84 88 88 77 74 70 77 74 80 73 84 83 80 76 79 83 79 86 95 95
+WIND DIR          S SW SW NW  N NE  E  E  E  E  E  N NW NW NW NW NW NW NW  N NW
+WIND SPD          9  6  8  8 11 12 12 14 11 10  8  8 11 11 13 14 10  6  6  4  6
+CLOUDS           SC B2 SC SC B1 OV OV OV OV OV OV OV B2 B2 B2 B1 B1 B1 B2 B2 B2
+POP 12HR                      5          20          50          20          10
+QPF 12HR                      0           0        0.02           0           0
+SNOW 12HR                 00-00       00-00           T
+SNOW                                      C  C  C  C  S  S                    S
+WIND CHILL       13 16 14 13  8  6  6  6  7  4  5  3 -6 -6 -7 -9-12-15-21-20-24
+MIN CHILL        12    14     8     6     6     4    -6    -8   -12   -21   -24
+
+
+DATE           02/08/17  THU 02/09/17  FRI 02/10/17  SAT 02/11/17  SUN 02/12/17
+MST 6HRLY     11 17 23   05 11 17 23   05 11 17 23   05 11 17 23   05 11 17
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN           7      -2    34      30    44      25    35      19    32
+TEMP           1 -1  0    6 25 32 34   37 42 40 32   27 31 30 22   19 28 29
+DEWPT         -5 -3 -3    2 20 26 28   30 33 31 24   21 23 21 18   16 19 19
+PWIND DIR        NW      SW    SW      SW     W       W     W      NW    NW
+WIND CHAR        GN      GN    GN      GN    BZ      GN    GN      GN    BZ
+AVG CLOUDS    B2 B1 B1   B1 SC B1 B1   B2 B2 B1 SC   SC SC SC SC   SC SC SC
+POP 12HR         20      10     0       5    10       0     5       5     5
+SNOW           S     S    S
+
+$$
+NDZ045-061000-
+SELFRIDGE-SIOUX ND
+46.04N 100.92W ELEV. 666 FT
+527 PM CST SUN FEB 5 2017
+
+DATE           02/05/17      MON 02/06/17            TUE 02/07/17            WED
+CST 3HRLY     15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06
+UTC 3HRLY     21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12
+
+MIN/MAX                      13          21           6           8          -8
+TEMP             15 15 15 16 14 13 17 21 16 13 12 11  8  7  7  6  4 -1 -3 -5 -7
+DEWPT            10 11 12 13 11 10 12 13 11 11  8  8  4  3  1  2 -2 -7 -8-10-11
+RH               80 84 88 88 88 87 80 71 80 91 84 87 83 83 76 83 75 75 78 78 82
+WIND DIR          S  S  S  E NE NE NE NE NE NE NE  N  N  N NW NW NW NW NW NW NW
+WIND SPD         12 10  8  2  9 11 16 16 13 10 11 11 13 12 16 13 12  9  9  8  9
+CLOUDS           B2 B2 B1 B1 B1 B2 B2 OV OV OV OV OV OV B2 B1 B1 B1 SC B1 B1 B1
+POP 12HR                      5          20          40          30           5
+QPF 12HR                      0           0           0           0           0
+SNOW 12HR                 00-00       00-00       00-00
+SNOW                                      S  S  C  C  C  C
+WIND CHILL        1  2  4     2 -1  2  7  2  0 -2 -3 -8 -9-11-11-13-16-19-20-24
+MIN CHILL         0     2     2    -1     2    -2    -8   -11   -13   -19   -24
+
+
+DATE           02/08/17  THU 02/09/17  FRI 02/10/17  SAT 02/11/17  SUN 02/12/17
+CST 6HRLY     12 18 00   06 12 18 00   06 12 18 00   06 12 18 00   06 12 18
+UTC 6HRLY     18 00 06   12 18 00 06   12 18 00 06   12 18 00 06   12 18 00
+
+MAX/MIN           4      -5    24      20    41      24    32      17    29
+TEMP           1 -2 -5   -3 15 20 25   29 39 36 29   26 29 28 22   18 26 26
+DEWPT         -6 -6 -8   -4 10 17 21   27 32 32 26   22 23 21 16   16 19 19
+PWIND DIR        NW      SW     S       S     W       W    NW      NW    NW
+WIND CHAR        GN      GN    GN      GN    BZ      GN    GN      GN    BZ
+AVG CLOUDS    B2 B1 SC   SC SC B1 B1   B2 B2 B1 SC   SC SC SC SC   SC SC SC
+POP 12HR         10      10     5       0     5       0     5       0     5
+SNOW                      S
+
+$$
+
+
+</pre>
+
+
+
+<!-- // CONTENT ENDS HERE -->
+</div></div>
+<hr width="100%" />
+<div id="required">
+<div id="firstgov"><a href="/nwsexit.php?url=http://www.usa.gov/"><img src="/css/default/images/usagov.gif" alt="USA.gov is the U.S. government's official web portal to all federal, state and local government web resources and services." class="img" width="110" height="30" /></a></div>
+<ul id="contact">
+<li>National Weather Service</li>
+<li>National Weather Service National Headquarters</li>
+<li>1325 East West Highway</li><li>Silver Spring, MD  20910</li>
+<li></li>
+Incorrect Region Format!<li>Web Master's E-mail: <a href="mailto:">NWS Internet Services Team</a></li>
+<li>Page last modified: Nov 15th, 2016 16:47 UTC</li>
+</ul>
+<ul id="disclaimer">
+<li><a href="http://www.weather.gov/disclaimer.php">Disclaimer</a></li>
+<li><a href="http://www.weather.gov/credits.php">Credits</a></li>
+<li><a href="http://www.weather.gov/glossary/">Glossary</a></li>
+</ul>
+<ul id="policy">
+<li><a href="http://www.weather.gov/privacy.php">Privacy Policy</a></li>
+<li><a href="http://www.weather.gov/admin.php">About Us</a></li>
+<li><a href="http://www.weather.gov/careers.php">Career Opportunities</a></li>
+</ul>
+</div></div>
+</body></html>

@@ -1,0 +1,32 @@
+#errorCatcher Echo
+## forecast sampler skin for weewx - Copyright 2014 Matthew Wall
+## $Id: zambretti.html.tmpl 1583 2016-11-26 16:25:54Z mwall $
+#encoding UTF-8
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Forecast Sampler: Zambretti</title>
+  <link rel='stylesheet' type='text/css' href='forecast.css'/>
+</head>
+<body>
+
+#if $varExists('forecast')
+
+<h1>Zambretti</h1>
+<p>
+#if $varExists('forecast.zambretti')
+The forecast is $forecast.label('Zambretti', $forecast.zambretti.code)<br/>
+<span class='issued'>Issued at $forecast.zambretti.issued_ts</span>
+#else
+The Zambretti forecast is not enabled.
+#end if
+</p>
+
+#else
+
+<p>The forecast search list extension is not installed.</p>
+
+#end if
+
+</body>
+</html>

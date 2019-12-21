@@ -1,0 +1,39 @@
+MAZ014-262100-
+CAMBRIDGE-MIDDLESEX MA
+42.37N  71.12W ELEV. 10 FT
+719 AM EDT MON AUG 26 2013
+
+DATE             MON 08/26/13            TUE 08/27/13            WED 08/28/13
+EDT 3HRLY     05 08 11 14 17 20 23 02 05 08 11 14 17 20 23 02 05 08 11 14 17 20
+UTC 3HRLY     09 12 15 18 21 00 03 06 09 12 15 18 21 00 03 06 09 12 15 18 21 00
+
+MAX/MIN                      81          68          83          67          82
+TEMP             68 74 79 78 77 73 70 69 71 77 80 79 76 72 70 69 71 77 81 79 73
+DEWPT            57 60 63 65 66 67 66 65 67 66 65 67 67 68 66 65 68 69 70 69 69
+RH               68 62 58 64 69 81 87 87 87 69 60 67 74 87 87 87 90 76 69 72 87
+WIND DIR         SW  W SW SW SW SW SW  W  N  E  E  E  E SE SE SE NW NE  E  E NE
+WIND SPD          8 11 12 11  9  5  3  3  3  3  6  6  5  3  2  1  5  4  9  8  4
+WIND GUST           21
+CLOUDS           OV OV OV B2 B2 B2 B2 B2 B2 B1 B1 SC SC SC B1 B2 B2 B2 B2 B2 B2
+POP 12HR                     50          20          20          20          40
+QPF 12HR                   0.11        0.06           0           0        0.30
+SNOW 12HR                 00-00       00-00       00-00
+RAIN SHWRS        C  C  C  C  S  S              S  S     S  S  S  S  C  C  C  C
+TSTMS                      S  S  S              S  S     S  S  S  S  C  C  C  C
+
+
+DATE          THU 08/29/13  FRI 08/30/13  SAT 08/31/13  SUN 09/01/13
+EDT 6HRLY     02 08 14 20   02 08 14 20   02 08 14 20   02 08 14 20
+UTC 6HRLY     06 12 18 00   06 12 18 00   06 12 18 00   06 12 18 00
+
+MIN/MAX          66    80      63    80      64    84      64    86
+TEMP          69 69 79 72   66 67 79 73   67 69 83 74   68 68 84 76
+DEWPT         66 66 64 62   61 61 60 60   59 60 59 60   61 63 62 63
+PWIND DIR        NE     N       N     N      SW    SW      SW    SW
+WIND CHAR        LT    LT      LT    LT      LT    LT      LT    LT
+AVG CLOUDS    B2 B1 B1 B1   SC SC SC SC   SC SC SC SC   SC SC SC SC
+POP 12HR         40    30      10    10      10    10       5    10
+RAIN SHWRS     C  S  S  S
+TSTMS          C     S  S
+
+$$

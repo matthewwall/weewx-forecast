@@ -1,0 +1,49 @@
+#errorCatcher Echo
+## forecast sampler skin for weewx - Copyright 2014 Matthew Wall
+## $Id: multiple-tables.html.tmpl 1600 2016-12-09 04:53:21Z mwall $
+#encoding UTF-8
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Forecast Sampler: Multiple Tables</title>
+  <link rel='stylesheet' type='text/css' href='forecast.css'/>
+  <link rel='stylesheet' type='text/css' href='forecast_table.css' />
+</head>
+<body>
+
+<h1>Forecast Table</h1>
+<p>
+Display forecast data in multiple tables, one table for each forecast source.
+</p>
+
+#set global $forecast_table_settings = dict()
+#set global $forecast_table_settings['num_periods'] = 300
+#set global $forecast_table_settings['show_legend'] = 1
+#set global $forecast_table_settings['show_hourly'] = 1
+#set global $forecast_table_settings['show_day'] = 1
+#set global $forecast_table_settings['show_date'] = 1
+#set global $forecast_table_settings['show_outlook'] = 1
+#set global $forecast_table_settings['show_temp'] = 1
+#set global $forecast_table_settings['show_dewpoint'] = 1
+#set global $forecast_table_settings['show_wind'] = 1
+#set global $forecast_table_settings['show_tides'] = 1
+#set global $forecast_table_settings['show_sun'] = 1
+#set global $forecast_table_settings['show_moon'] = 1
+#set global $forecast_table_settings['show_pop'] = 1
+#set global $forecast_table_settings['show_precip'] = 1
+#set global $forecast_table_settings['show_obvis'] = 1
+
+<h2>Weather Underground</h2>
+#set global $forecast_table_settings['source'] = 'WU'
+#include "forecast_table.inc"
+
+<h2>NWS</h2>
+#set global $forecast_table_settings['source'] = 'NWS'
+#include "forecast_table.inc"
+
+<h2>Aeris</h2>
+#set global $forecast_table_settings['source'] = 'Aeris'
+#include "forecast_table.inc"
+
+</body>
+</html>

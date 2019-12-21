@@ -1,0 +1,37 @@
+/* styles for the forecast_compact */
+.fc_compact td {
+    vertical-align: top;
+    text-align: right;
+}
+.fc_compact .first-column {
+    text-align: right;
+}
+.fc_compact .last-column {
+    text-align: left;
+}
+.fc_compact .row-outlook {
+    height: 36px;
+}
+.fc_compact .row-day {
+    text-transform: uppercase;
+}
+.fc_compact .row-wind {
+}
+.fc_compact .row-pop {
+}
+.fc_compact .row-precip {
+}
+.fc_compact .row-obvis {
+}
+.fc_compact .outlook-img {
+    width: 36px;
+    border: none;
+}
+.fc_compact .precip-img {
+    width: 36px;
+    border: none;
+}
+.fc_compact .obvis-img {
+    width: 36px;
+    border: none;
+}
