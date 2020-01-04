@@ -570,7 +570,7 @@ import weeutil.weeutil
 from weewx.engine import StdService
 from weewx.cheetahgenerator import SearchList
 
-VERSION = "3.4.0"
+VERSION = "3.4.0b1"
 
 def logmsg(level, msg):
     syslog.syslog(level, 'forecast: %s: %s' %
