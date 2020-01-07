@@ -1,5 +1,5 @@
-# $Id: test_cmp.py 1452 2016-02-06 22:57:57Z mwall $
-# Copyright: 2016 Matthew Wall
+#!/usr/bin/env python
+# Copyright: 2016-2020 Matthew Wall
 # License: GPLv3
 
 """Tests for weewx forecast comparison generator."""

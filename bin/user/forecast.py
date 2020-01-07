@@ -1,5 +1,6 @@
-# $Id: forecast.py 1802 2019-03-22 16:11:01Z mwall $
-# Copyright 2013 Matthew Wall
+#!/usr/bin/env python
+# Copyright 2013-2020 Matthew Wall
+# Distributed under the terms of the GNU Public License (GPLv3)
 """weewx module that provides forecasts
 
 Compatibility:

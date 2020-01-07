@@ -1,5 +1,6 @@
 This is a forecasting extension for the weewx weather system.
-Copyright 2013-2016 Matthew Wall
+Copyright 2013-2020 Matthew Wall
+Distributed under terms of the GPLv3
 
 This package includes the forecasting module, unit tests, and a sample skin.
 The following forecast sources are supported:

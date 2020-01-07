@@ -1,5 +1,5 @@
-# $Id: test_forecast.py 1800 2019-03-08 23:17:47Z tkeffer $
-# Copyright: 2013 Matthew Wall
+#!/usr/bin/env python
+# Copyright: 2013-2020 Matthew Wall
 # License: GPLv3
 
 """Tests for weewx forecasting module."""

@@ -1,6 +1,5 @@
-# $Id: install.py 1802 2019-03-22 16:11:01Z mwall $
 # installer for the forecast extension
-# Copyright 2014-2016 Matthew Wall
+# Copyright 2014-2020 Matthew Wall
 
 from weecfg.extension import ExtensionInstaller
 
