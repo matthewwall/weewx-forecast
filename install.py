@@ -1,5 +1,6 @@
 # installer for the forecast extension
 # Copyright 2014-2020 Matthew Wall
+# Distributed under the terms of the GNU Public License (GPLv3)
 
 from weecfg.extension import ExtensionInstaller
 
