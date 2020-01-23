@@ -136,7 +136,7 @@ function toggle_hours(control, id) {
 #end if
 
 
-#if $show_legend and len($periods) > 0
+#if $show_legend and $periods is not None and len($periods) > 0
   <div class='legend'>
     <table>
       <tr>
@@ -158,7 +158,7 @@ function toggle_hours(control, id) {
 #if $show_wind
         <td class='col-wind' style='text-align:center'><img src='icons/flag.png' class='legend-img' alt='W' title='wind' /><br/><span class='units'>$unit.label.wind</span></td>
 #end if
-#if $show_tides and len($tides) > 0
+#if $show_tides and $tides is not None and len($tides) > 0
         <td class='col-tides'><img src='icons/water.png' class='legend-img' alt='tide' title='tides' /><br/><span class='units'>$unit.label.altitude</span></td>
 #end if
 #if $show_sun
@@ -271,7 +271,7 @@ function toggle_hours(control, id) {
           <span class='windgust'>$summary.windGust.nolabel('%.0f',' ')</span>$summary.windChar
         </td>
 #end if
-#if $show_tides and len($tides) > 0
+#if $show_tides and $tides is not None and len($tides) > 0
         <td class='col-tides'>
           <table cellspacing='0' cellpadding='0' width='100%'>
   #for $tide in $tides
@@ -308,15 +308,15 @@ function toggle_hours(control, id) {
 #end if
 #if $show_pop
         <td class='col-pop'>
-  #if $summary.pop.raw > 0
+  #if $summary.pop.raw is not None and $summary.pop.raw > 0
           $summary.pop.format('%.0f','')
   #end if
 <br/>
-  #if $summary.qpf.raw > 0
+  #if $summary.qpf.raw is not None and $summary.qpf.raw > 0
           $summary.qpf.nolabel('%.2f','') <img class='pop-img' src='icons/raindrop.png' />
   #end if
 <br/>
-  #if $summary.qsf.raw > 0
+  #if $summary.qsf.raw is not None and $summary.qsf.raw > 0
           $summary.qsf.nolabel('%.2f','') <img class='pop-img' src='icons/snowflake.png' />
   #end if
         </td>
@@ -386,7 +386,7 @@ function toggle_hours(control, id) {
           $period.windSpeed.nolabel('%.0f',' ') <span class='windgust'>$period.windGust.nolabel('%.0f',' ')</span>$period.windChar<br/>
         </td>
 #end if
-#if $show_tides and len($tides) > 0
+#if $show_tides and $tides is not None and len($tides) > 0
         <td class='col-tides'>
   #for $tide in $tides
     #if $period.event_ts.raw <= $tide.event_ts.raw < $period.event_ts.raw + $period.duration and $tide.event_ts.raw < $nextday_ts
@@ -420,15 +420,15 @@ function toggle_hours(control, id) {
 #end if
 #if $show_pop
         <td class='col-pop'>
-  #if $period.pop.raw > 0
+  #if $period.pop.raw is not None and $period.pop.raw > 0
           $period.pop.format('%.0f',' ')
   #end if
 <br/>
-  #if $period.qpf.raw > 0
+  #if $period.qpf.raw is not None and $period.qpf.raw > 0
           $period.qpf.nolabel('%.2f',' ') <img class='pop-img' src='icons/raindrop.png' />
   #end if
 <br/>
-  #if $period.qsf.raw > 0
+  #if $period.qsf.raw is not None and $period.qsf.raw > 0
           $period.qsf.nolabel('%.2f',' ') <img class='pop-img' src='icons/snowflake.png' />
   #end if
         </td>
@@ -463,7 +463,7 @@ function toggle_hours(control, id) {
 #end if  ## show_hourly
 #end for ## period in periods
 
-#if $show_hourly and len($periods) > 0
+#if $show_hourly and $periods is not None and len($periods) > 0
     </table>
   </div>
 #end if
@@ -477,7 +477,7 @@ function toggle_hours(control, id) {
 #if $wts is not None and $wts != ''
  issued on $wts
 #end if
-#if $show_tides and len($tides) > 0
+#if $show_tides and $tides is not None and len($tides) > 0
       <br/>tides for $tides[0].location issued on $tides[0].issued_ts
 #end if
 #set $t1 = time.time()
