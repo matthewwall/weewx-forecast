@@ -518,41 +518,22 @@ import configobj
 import datetime
 import gzip
 import hashlib
+import logging
+import six.moves.http_client
 import os, errno
 import re
 import socket
 import subprocess
-import syslog
 import threading
 import time
+import six.moves.urllib.request, six.moves.urllib.error, six.moves.urllib.parse
 
-try:
-    # Python 3
-    from io import StringIO
-except ImportError:
-    # Python 2
-    from StringIO import StringIO
+from io import BytesIO
+from six.moves import range
 
-try:
-    # Python 3
-    from urllib.request import Request, urlopen
-except ImportError:
-    # Python 2
-    from urllib2 import Request, urlopen
+import weeutil.logger
 
-try:
-    # Python 3
-    from urllib.error import URLError
-except ImportError:
-    # Python 2
-    from urllib2 import URLError
-
-try:
-    # Python 3
-    from http.client import BadStatusLine, IncompleteRead
-except ImportError:
-    # Python 2
-    from httplib import BadStatusLine, IncompleteRead
+log = logging.getLogger(__name__)
 
 try:
     import cjson as json
@@ -573,18 +554,15 @@ from weewx.cheetahgenerator import SearchList
 
 VERSION = "3.4.0b1"
 
-def logmsg(level, msg):
-    syslog.syslog(level, 'forecast: %s: %s' %
-                  (threading.currentThread().getName(), msg))
 
 def logdbg(msg):
-    logmsg(syslog.LOG_DEBUG, msg)
+    log.debug('%s: %s' % (threading.currentThread().getName(), msg))
 
 def loginf(msg):
-    logmsg(syslog.LOG_INFO, msg)
+    log.info('%s: %s' % (threading.currentThread().getName(), msg))
 
 def logerr(msg):
-    logmsg(syslog.LOG_ERR, msg)
+    log.error('%s: %s' % (threading.currentThread().getName(), msg))
 
 def mkdir_p(path):
     """equivalent to 'mkdir -p'"""
@@ -987,9 +965,9 @@ DEFAULT_BINDING_DICT = {
 
 class ForecastThread(threading.Thread):
     def __init__(self, target, *args):
+        threading.Thread.__init__(self)
         self._target = target
         self._args = args
-        threading.Thread.__init__(self)
 
     def run(self):
         self._target(*self._args)
@@ -1130,7 +1108,7 @@ class Forecast(StdService):
         # map a percentage to a cloud indicator
         try:
             v = int(value)
-        except (ValueError, TypeError):
+        except ValueError as TypeError:
             return None
         if 0 <= v <= 5:
             return 'CL'
@@ -1151,7 +1129,7 @@ class Forecast(StdService):
         # map a decimal degree to a compass direction
         try:
             v = float(value)
-        except (ValueError, TypeError):
+        except ValueError as TypeError:
             return None
         if 0 <= v <= 22.5:
             return 'N'
@@ -1209,7 +1187,7 @@ class Forecast(StdService):
             self.do_forecast(event)
         elif self.updating:
             logdbg('%s: update thread already running' % self.method_id)
-        elif time.time() - self.interval > self.last_ts:
+        elif self.last_ts is None or time.time() - self.interval > self.last_ts:
             t = ForecastThread(self.do_forecast, event)
             t.setName(self.method_id + 'Thread')
             logdbg('%s: starting thread' % self.method_id)
@@ -1243,7 +1221,7 @@ class Forecast(StdService):
                     Forecast.vacuum_database(dbm, self.method_id)
         except Exception as e:
             logerr('%s: forecast failure: %s' % (self.method_id, e))
-            weeutil.weeutil.log_traceback(loglevel=syslog.LOG_DEBUG)
+            weeutil.logger.log_traceback(loginf, "    ****  ")
         finally:
             logdbg('%s: terminating thread' % self.method_id)
             self.updating = False
@@ -1271,7 +1249,7 @@ class Forecast(StdService):
             try:
                 logdbg('%s: saving %d forecast records' %
                        (method_id, len(records)))
-                dbm.addRecord(records, log_level=syslog.LOG_DEBUG)
+                dbm.addRecord(records)
                 loginf('%s: saved %d forecast records' %
                        (method_id, len(records)))
                 break
@@ -1788,10 +1766,11 @@ def NWSDownloadForecast(foid, url=NWS_DEFAULT_PFM_URL, max_tries=3):
     loginf("%s: downloading forecast from '%s'" % (NWS_KEY, u))
     for count in range(max_tries):
         try:
-            response = urlopen(u)
+            response = six.moves.urllib.request.urlopen(u)
             text = response.read()
-            return text
-        except (socket.error, URLError, BadStatusLine, IncompleteRead) as e:
+            return text.decode('utf-8')
+        except (six.moves.urllib.error.URLError, socket.error,
+                six.moves.http_client.BadStatusLine, six.moves.http_client.IncompleteRead) as e:
             logerr('%s: failed attempt %d to download NWS forecast: %s' %
                    (NWS_KEY, count + 1, e))
     else:
@@ -2193,22 +2172,23 @@ class DSForecast(Forecast):
             u = '?'.join([u, optional_str]) if len(optional_str) > 0 else u
         else:
             u = url
-        request = Request(u)
+        request = six.moves.urllib.request.Request(u)
         if compression:
             request.add_header('Accept-Encoding', 'gzip')
         masked = Forecast.get_masked_url(u, api_key)
         loginf("%s: downloading forecast from '%s'" % (DS_KEY, masked))
         for count in range(max_tries):
             try:
-                response = urlopen(request)
+                response = six.moves.urllib.request.urlopen(request)
                 if response.info().get('Content-Encoding') == 'gzip':
-                    buf = StringIO(response.read())
+                    buf = BytesIO(response.read())
                     f = gzip.GzipFile(fileobj=buf)
                     text = f.read()
                 else:
                     text = response.read()
-                return text
-            except (socket.error, URLError, BadStatusLine, IncompleteRead) as e:
+                return text.decode('utf-8')
+            except (six.moves.urllib.error.URLError, socket.error,
+                    six.moves.http_client.BadStatusLine, six.moves.http_client.IncompleteRead) as e:
                 logerr('%s: failed attempt %d to download forecast: %s' %
                        (DS_KEY, count + 1, e))
         else:
@@ -2638,10 +2618,11 @@ class WUForecast(Forecast):
         loginf("%s: download forecast from '%s'" % (WU_KEY, masked))
         for count in range(max_tries):
             try:
-                response = urlopen(u)
+                response = six.moves.urllib.request.urlopen(u)
                 text = response.read()
-                return text
-            except (socket.error, URLError, BadStatusLine, IncompleteRead) as e:
+                return text.decode('utf-8')
+            except (six.moves.urllib.error.URLError, socket.error,
+                    six.moves.http_client.BadStatusLine, six.moves.http_client.IncompleteRead) as e:
                 logerr('%s: failed attempt %d to download forecast: %s' %
                        (WU_KEY, count + 1, e))
         else:
@@ -3084,9 +3065,10 @@ class OWMForecast(Forecast):
 
         for count in range(max_tries):
             try:
-                response = urlopen(u)
-                return response.read()
-            except (socket.error, URLError, BadStatusLine, IncompleteRead) as e:
+                response = six.moves.urllib.request.urlopen(u)
+                return response.read().decode('utf-8')
+            except (six.moves.urllib.error.URLError, socket.error,
+                    six.moves.http_client.BadStatusLine, six.moves.http_client.IncompleteRead) as e:
                 logerr('%s: failed attempt %d to download forecast: %s' %
                        (OWMForecast.KEY, count + 1, e))
         else:
@@ -3299,9 +3281,10 @@ class UKMOForecast(Forecast):
 
         for count in range(max_tries):
             try:
-                response = urlopen(u)
-                return response.read()
-            except (socket.error, URLError, BadStatusLine, IncompleteRead) as e:
+                response = six.moves.urllib.request.urlopen(u)
+                return response.read().decode('utf-8')
+            except (six.moves.urllib.error.URLError, socket.error,
+                    six.moves.http_client.BadStatusLine, six.moves.http_client.IncompleteRead) as e:
                 logerr('%s: failed attempt %d to download forecast: %s' %
                        (UKMOForecast.KEY, count + 1, e))
         else:
@@ -3552,9 +3535,10 @@ class AerisForecast(Forecast):
 
         for count in range(max_tries):
             try:
-                response = urlopen(u)
-                return response.read()
-            except (socket.error, URLError, BadStatusLine, IncompleteRead) as e:
+                response = six.moves.urllib.request.urlopen(u)
+                return response.read().decode('utf-8')
+            except (six.moves.urllib.error.URLError, socket.error,
+                    six.moves.http_client.BadStatusLine, six.moves.http_client.IncompleteRead) as e:
                 logerr('%s: failed attempt %d to download forecast: %s' %
                        (AerisForecast.KEY, count + 1, e))
         else:
@@ -3814,9 +3798,10 @@ class WWOForecast(Forecast):
 
         for count in range(max_tries):
             try:
-                response = urlopen(u)
-                return response.read()
-            except (socket.error, URLError, BadStatusLine, IncompleteRead) as e:
+                response = six.moves.urllib.request.urlopen(u)
+                return response.read().decode('utf-8')
+            except (six.moves.urllib.error.URLError, socket.error,
+                    six.moves.http_client.BadStatusLine, six.moves.http_client.IncompleteRead) as e:
                 logerr('%s: failed attempt %d to download forecast: %s' %
                        (WWOForecast.KEY, count + 1, e))
         else:
@@ -4029,6 +4014,7 @@ class XTideForecast(Forecast):
             # xtide replaces commas in the location with |
             out = []
             for line in p.stdout:
+                line = line.decode('utf-8')
                 if line.count(',') == 4:
                     out.append(line)
                 else:
@@ -5013,9 +4999,10 @@ class ForecastPlotGenerator(weewx.reportengine.ReportGenerator):
 if __name__ == "__main__":
     usage = """%prog [options] [--help] [--debug]"""
 
+    import weeutil.logger
+
     def main():
         import optparse
-        syslog.openlog('wee_forecast', syslog.LOG_PID | syslog.LOG_CONS)
         parser = optparse.OptionParser(usage=usage)
         parser.add_option('--version', dest='version', action='store_true',
                           help='display the version')
@@ -5052,14 +5039,16 @@ if __name__ == "__main__":
                           default='/usr/bin/tide')
         (options, args) = parser.parse_args()
 
+        weeutil.logger.setup('forecast', {})
+
         if options.version:
             print("forecast version %s" % VERSION)
             exit(0)
 
         if options.debug:
-            syslog.setlogmask(syslog.LOG_UPTO(syslog.LOG_DEBUG))
+            weewx.debug = 1
         else:
-            syslog.setlogmask(syslog.LOG_UPTO(syslog.LOG_INFO))
+            weewx.debug = 0
 
         if options.action == 'download':
             if not options.method:
