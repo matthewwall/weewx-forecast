@@ -554,6 +554,10 @@ from weewx.cheetahgenerator import SearchList
 
 VERSION = "3.4.0b1"
 
+if weewx.__version__ < "4":
+    raise weewx.UnsupportedFeature(
+        "WeeWX 4 is required, found %s" % weewx.__version__)
+
 
 def logdbg(msg):
     log.debug('%s: %s' % (threading.currentThread().getName(), msg))
