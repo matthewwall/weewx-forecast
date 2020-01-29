@@ -554,6 +554,10 @@ from weewx.cheetahgenerator import SearchList
 
 VERSION = "3.4.0b1"
 
+if weewx.__version__ < "4":
+    raise weewx.UnsupportedFeature(
+        "WeeWX 4 is required, found %s" % weewx.__version__)
+
 
 def logdbg(msg):
     log.debug('%s: %s' % (threading.currentThread().getName(), msg))
@@ -1221,7 +1225,7 @@ class Forecast(StdService):
                     Forecast.vacuum_database(dbm, self.method_id)
         except Exception as e:
             logerr('%s: forecast failure: %s' % (self.method_id, e))
-            weeutil.logger.log_traceback(loginf, "    ****  ")
+            weeutil.logger.log_traceback(log.error, "    ****  ")
         finally:
             logdbg('%s: terminating thread' % self.method_id)
             self.updating = False
@@ -3936,7 +3940,7 @@ class XTideForecast(Forecast):
             self.location, dur=self.duration, prog=self.tideprog)
         if lines is None:
             return None
-        records = self.parse(lines, self.location)
+        records = self.parse(lines, location=self.location)
         if records is None:
             return None
         logdbg('%s: tide matrix: %s' % (self.method_id, records))
