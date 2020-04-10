@@ -3285,7 +3285,9 @@ class UKMOForecast(Forecast):
 
         for count in range(max_tries):
             try:
-                response = six.moves.urllib.request.urlopen(u)
+                user_agent = {'User-Agent': 'Mozilla/5.0'}
+                requester = six.moves.urllib.request.Request(u, headers=user_agent)
+                response = six.moves.urllib.request.urlopen(requester)
                 return response.read().decode('utf-8')
             except (six.moves.urllib.error.URLError, socket.error,
                     six.moves.http_client.BadStatusLine, six.moves.http_client.IncompleteRead) as e:
