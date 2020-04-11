@@ -78,7 +78,7 @@ Installation instructions:
 
 1) run the installer:
 
-wee_extension --install weewx-forecast.tgz
+wee_extension --install weewx-forecast.zip
 
 2) modify weewx.conf for your location:
 
