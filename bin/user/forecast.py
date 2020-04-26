@@ -5033,9 +5033,9 @@ if __name__ == "__main__":
                           help="specify the location")
         parser.add_option("--api-key", dest="api_key", type=str, metavar="KEY",
                           help="specify the api key")
-        parser.add_option("--client-id", dest="client-id", type=str,
+        parser.add_option("--client-id", dest="client_id", type=str,
                           metavar="ID", help="specify the client id")
-        parser.add_option("--client-secret", dest="client-secret", type=str,
+        parser.add_option("--client-secret", dest="client_secret", type=str,
                           metavar="SECRET", help="specify the client secret")
         parser.add_option("--filename", dest="filename", metavar="FILENAME",
                           help="file that contains forecast data",
@@ -5077,6 +5077,9 @@ if __name__ == "__main__":
             elif options.method.lower() == 'ukmet':
                 fcast = AerisForecast.download(
                     options.client_id, options.client_secret, options.loc)
+                print(fcast)
+            elif options.method.lower() == 'aeris':
+                fcast = AerisForecast.download(options.client_id, options.client_secret, options.loc)
                 print(fcast)
             elif options.method.lower() == 'wwo':
                 fcast = WWOForecast.download(options.api_key, options.loc)
