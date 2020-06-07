@@ -961,12 +961,6 @@ weather_label_dict = {
     'ZY': 'Freezing Spray',    # aeris
     }
 
-DEFAULT_BINDING_DICT = {
-    'database': 'forecast_sqlite',
-    'manager': 'weewx.manager.Manager',
-    'table_name': 'archive',
-    'schema': 'user.forecast.schema'}
-
 class ForecastThread(threading.Thread):
     def __init__(self, target, *args):
         threading.Thread.__init__(self)
@@ -1026,9 +1020,7 @@ class Forecast(StdService):
         self.last_fail_digest = None
 
         # setup database
-        dbm_dict = weewx.manager.get_manager_dict(
-            config_dict['DataBindings'], config_dict['Databases'], self.binding,
-            default_binding_dict=DEFAULT_BINDING_DICT)
+        dbm_dict = weewx.manager.get_manager_dict_from_config(config_dict, self.binding)
         with weewx.manager.open_manager(dbm_dict, initialize=True) as dbm:
             # ensure schema on disk matches schema in memory
             dbcol = dbm.connection.columnsOf(dbm.table_name)
@@ -1207,11 +1199,7 @@ class Forecast(StdService):
             records = self.get_forecast(event)
             if records is None:
                 return
-            dbm_dict = weewx.manager.get_manager_dict(
-                self.config_dict['DataBindings'],
-                self.config_dict['Databases'],
-                self.binding,
-                default_binding_dict=DEFAULT_BINDING_DICT)
+            dbm_dict = weewx.manager.get_manager_dict_from_config(self.config_dict, self.binding)
             with weewx.manager.open_manager(dbm_dict) as dbm:
                 Forecast.save_forecast(dbm, records, self.method_id,
                                        self.db_max_tries, self.db_retry_wait)
@@ -1224,7 +1212,7 @@ class Forecast(StdService):
                 if self.vacuum:
                     Forecast.vacuum_database(dbm, self.method_id)
         except Exception as e:
-            logerr('%s: forecast failure: %s' % (self.method_id, e))
+            logerr('%s: forecast failure: %s, dbm_dict: %s' % (self.method_id, e, dbm_dict))
             weeutil.logger.log_traceback(log.error, "    ****  ")
         finally:
             logdbg('%s: terminating thread' % self.method_id)
@@ -1391,10 +1379,7 @@ class ZambrettiForecast(Forecast):
                 weeutil.weeutil.timestamp_to_string(ts)))
 
         try:
-            dbm_dict = weewx.manager.get_manager_dict(
-                self.config_dict['DataBindings'],
-                self.config_dict['Databases'],
-                'wx_binding')
+            dbm_dict = weewx.manager.get_manager_dict_from_config(self.config_dict, 'wx_binding')
             with weewx.manager.open_manager(dbm_dict) as dbm:
                 r = dbm.getSql('SELECT usUnits FROM %s LIMIT 1' %
                                dbm.table_name)
@@ -4362,11 +4347,7 @@ class ForecastVariables(SearchList):
         return [{'forecast': self}]
 
     def _getTides(self, context, from_ts=None, max_events=1):
-        dbm_dict = weewx.manager.get_manager_dict(
-            self.generator.config_dict['DataBindings'],
-            self.generator.config_dict['Databases'],
-            self.binding,
-            default_binding_dict=DEFAULT_BINDING_DICT)
+        dbm_dict = weewx.manager.get_manager_dict_from_config(self.generator.config_dict, self.binding)
         with weewx.manager.open_manager(dbm_dict) as dbm:
             if from_ts is None:
                 from_ts = int(time.time())
@@ -4404,11 +4385,7 @@ class ForecastVariables(SearchList):
         indicated period of time, limiting to max_events records"""
         # NB: this query assumes that forecasting is deterministic, i.e., two
         # queries to a single forecast will always return the same results.
-        dbm_dict = weewx.manager.get_manager_dict(
-            self.generator.config_dict['DataBindings'],
-            self.generator.config_dict['Databases'],
-            self.binding,
-            default_binding_dict=DEFAULT_BINDING_DICT)
+        dbm_dict = weewx.manager.get_manager_dict_from_config(self.generator.config_dict, self.binding)
         with weewx.manager.open_manager(dbm_dict) as dbm:
             sql = "select * from %s where method = '%s' and event_ts >= %d and event_ts <= %d and dateTime = (select max(dateTime) from %s where method = '%s') order by event_ts asc" % (dbm.table_name, fid, from_ts, to_ts, dbm.table_name, fid)
             if max_events is not None:
@@ -4492,11 +4469,7 @@ class ForecastVariables(SearchList):
         """The zambretti forecast applies at the time at which it was created,
         and is good for about 6 hours.  So there is no difference between the
         created timestamp and event timestamp."""
-        dbm_dict = weewx.manager.get_manager_dict(
-            self.generator.config_dict['DataBindings'],
-            self.generator.config_dict['Databases'],
-            self.binding,
-            default_binding_dict=DEFAULT_BINDING_DICT)
+        dbm_dict = weewx.manager.get_manager_dict_from_config(self.generator.config_dict, self.binding)
         with weewx.manager.open_manager(dbm_dict) as dbm:
             sql = "select dateTime,zcode from %s where method = 'Zambretti' order by dateTime desc limit 1" % dbm.table_name
             for count in range(self.db_max_tries):
@@ -4855,11 +4828,7 @@ class ForecastPlotGenerator(weewx.reportengine.ReportGenerator):
 
         # scan the old database for the issued timestamps that we need to plot
         logdbg("scan forecast database")
-        src_dbm_dict = weewx.manager.get_manager_dict(
-            self.config_dict['DataBindings'],
-            self.config_dict['Databases'],
-            self.config_dict['Forecast']['data_binding'],
-            default_binding_dict=DEFAULT_BINDING_DICT)
+        dbm_dict = weewx.manager.get_manager_dict_from_config(self.config_dict, self.config_dict['Forecast']['data_binding'])
         with weewx.manager.open_manager(src_dbm_dict) as src_dbm:
             for p in request:
                 request[p]['plots'] = []

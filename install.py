@@ -50,6 +50,9 @@ class ForecastInstaller(ExtensionInstaller):
                         'api_key': 'INSERT_DS_API_KEY_HERE'}},
                 'DataBindings': {
                     'forecast_binding': {
+                        'manager': 'weewx.manager.Manager',
+                        'schema': 'user.forecast.schema',
+                        'table_name': 'archive',
                         'database': 'forecast_sqlite'}},
                 'Databases': {
                     'forecast_sqlite': {
