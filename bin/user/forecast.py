@@ -552,7 +552,7 @@ import weeutil.weeutil
 from weewx.engine import StdService
 from weewx.cheetahgenerator import SearchList
 
-VERSION = "3.4.0b2"
+VERSION = "3.4.0b3"
 
 if weewx.__version__ < "4":
     raise weewx.UnsupportedFeature(
@@ -1213,7 +1213,6 @@ class Forecast(StdService):
                     Forecast.vacuum_database(dbm, self.method_id)
         except Exception as e:
             logerr('%s: forecast failure: %s, dbm_dict: %s' % (self.method_id, e, dbm_dict))
-            weeutil.logger.log_traceback(log.error, "    ****  ")
         finally:
             logdbg('%s: terminating thread' % self.method_id)
             self.updating = False
@@ -4233,12 +4232,13 @@ def _get_stats(key, a, b):
                     _max = weewx.units.convertStd(_m.value_t, weewx.US).value
                 else:
                     _max = float(_m)
-                b[key + 'Max'] = max(b[key + 'Max'], _max)
+                if _max is not None:
+                    b[key + 'Max'] = max(b[key + 'Max'], _max)
         else:
             n = b[key + 'N'] + 1
             b[key] = (b[key] * b[key + 'N'] + x) / n
             b[key + 'N'] = n
-            if x < b[key + 'Min']:
+            if b[key + 'Min'] is None or x < b[key + 'Min']:
                 b[key + 'Min'] = x
             _m = a.get(key + 'Min')
             if _m is not None:
@@ -4248,7 +4248,7 @@ def _get_stats(key, a, b):
                     _min = float(_m)
                 if _min is not None:
                     b[key + 'Min'] = min(b[key + 'Min'], _min)
-            if x > b[key + 'Max']:
+            if b[key + 'Max'] is None or x > b[key + 'Max']:
                 b[key + 'Max'] = x
             _m = a.get(key + 'Max')
             if _m is not None:
@@ -4256,9 +4256,11 @@ def _get_stats(key, a, b):
                     _max = weewx.units.convertStd(_m.value_t, weewx.US).value
                 else:
                     _max = float(_m)
-                b[key + 'Max'] = max(b[key + 'Max'], _max)
+                if _max is not None:
+                    b[key + 'Max'] = max(b[key + 'Max'], _max)
     except (ValueError, TypeError) as e:
         logdbg("_get_stats: %s" % e)
+        weeutil.logger.log_traceback(log.error, "    ****  ")
 
 def _get_sum(key, a, b):
     y = b.get(key, None)
@@ -4275,6 +4277,7 @@ def _get_sum(key, a, b):
                 return x
     except (ValueError, TypeError) as e:
         logdbg("_get_sum: %s" % e)
+        weeutil.logger.log_traceback(log.error, "    ****  ")
     return y
 
 def _get_min(key, a, b):
@@ -4283,12 +4286,15 @@ def _get_min(key, a, b):
         if s is not None:
             if type(s) == weewx.units.ValueHelper:
                 x = weewx.units.convertStd(s.value_t, weewx.US)[0]
+                if x is None:
+                    return b.get(key, None)
             else:
                 x = float(s)
             if b.get(key, None) is None or x < b[key]:
                 return x
     except (ValueError, TypeError) as e:
         logdbg("_get_min: %s" % e)
+        weeutil.logger.log_traceback(log.error, "    ****  ")
     return b.get(key, None)
 
 def _get_max(key, a, b):
@@ -4297,12 +4303,15 @@ def _get_max(key, a, b):
         if s is not None:
             if type(s) == weewx.units.ValueHelper:
                 x = weewx.units.convertStd(s.value_t, weewx.US)[0]
+                if x is None:
+                    return b.get(key, None)
             else:
                 x = float(s)
             if b.get(key, None) is None or x > b[key]:
                 return x
     except (ValueError, TypeError) as e:
         logdbg("_get_max: %s" % e)
+        weeutil.logger.log_traceback(log.error, "    ****  ")
     return b.get(key, None)
 
 
