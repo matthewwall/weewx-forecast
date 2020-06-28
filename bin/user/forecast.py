@@ -552,7 +552,7 @@ import weeutil.weeutil
 from weewx.engine import StdService
 from weewx.cheetahgenerator import SearchList
 
-VERSION = "3.4.0b3"
+VERSION = "3.4.0b4"
 
 if weewx.__version__ < "4":
     raise weewx.UnsupportedFeature(
@@ -1015,9 +1015,14 @@ class Forecast(StdService):
         self.delay = int(self._get_opt(d, fid, 'delay', 0))
 
         self.last_ts = 0
-        self.updating = False
         self.last_raw_digest = None
         self.last_fail_digest = None
+
+        # Forecast records are put in self.records and are written to the db
+        # at NEW_ARCHIVE_RECORD(update_forecast) time.
+        self.lock     = threading.Lock()
+        self.updating = False # Controlled by self.lock
+        self.records  = None  # Controlled by self.lock
 
         # setup database
         dbm_dict = weewx.manager.get_manager_dict_from_config(config_dict, self.binding)
@@ -1179,43 +1184,64 @@ class Forecast(StdService):
         self.last_fail_digest = digest
 
     def update_forecast(self, event):
+        # If there is a forecast waiting to be written to the db,
+        # write it and exit.
+        with self.lock:
+            if self.records is not None:
+                # write forecast to db
+                try:
+                    dbm_dict = weewx.manager.get_manager_dict_from_config(self.config_dict, self.binding)
+                    with weewx.manager.open_manager(dbm_dict) as dbm:
+                        Forecast.save_forecast(dbm, self.records, self.method_id,
+                                               self.db_max_tries, self.db_retry_wait)
+                        self.last_ts = int(time.time())
+                        if self.max_age is not None:
+                            Forecast.prune_forecasts(dbm, self.method_id,
+                                                     self.last_ts - self.max_age,
+                                                     self.db_max_tries,
+                                                     self.db_retry_wait)
+                        if self.vacuum:
+                            Forecast.vacuum_database(dbm, self.method_id)
+                    self.records = None
+                except Exception as e:
+                    # Include a stack traceback in the log.
+                    log.error('updateForecast(%s): %s (%s)' % (type(self), e, type(e)))
+                    weeutil.logger.log_traceback(log.error, "    ****  ")
+                return
+
+        # No forecast was waiting to be written, perhaps kick off a do_forecast.
         if self.single_thread:
             self.do_forecast(event)
-        elif self.updating:
-            logdbg('%s: update thread already running' % self.method_id)
-        elif self.last_ts is None or time.time() - self.interval > self.last_ts:
+            return
+        with self.lock:
+            if self.updating:
+                logdbg('%s: update thread already running' % self.method_id)
+                return
+        if self.last_ts is None or time.time() - self.interval > self.last_ts:
             t = ForecastThread(self.do_forecast, event)
             t.setName(self.method_id + 'Thread')
             logdbg('%s: starting thread' % self.method_id)
+            with self.lock:
+                self.updating = True
             t.start()
         else:
             logdbg('%s: not yet time to do the forecast' % self.method_id)
 
     def do_forecast(self, event):
-        self.updating = True
         try:
             if self.delay:
                 time.sleep(self.delay)
             records = self.get_forecast(event)
             if records is None:
                 return
-            dbm_dict = weewx.manager.get_manager_dict_from_config(self.config_dict, self.binding)
-            with weewx.manager.open_manager(dbm_dict) as dbm:
-                Forecast.save_forecast(dbm, records, self.method_id,
-                                       self.db_max_tries, self.db_retry_wait)
-                self.last_ts = int(time.time())
-                if self.max_age is not None:
-                    Forecast.prune_forecasts(dbm, self.method_id,
-                                             self.last_ts - self.max_age,
-                                             self.db_max_tries,
-                                             self.db_retry_wait)
-                if self.vacuum:
-                    Forecast.vacuum_database(dbm, self.method_id)
+            with self.lock:
+                self.records = records.copy()
         except Exception as e:
             logerr('%s: forecast failure: %s, dbm_dict: %s' % (self.method_id, e, dbm_dict))
         finally:
             logdbg('%s: terminating thread' % self.method_id)
-            self.updating = False
+            with self.lock:
+                self.updating = False
 
     def get_forecast(self, event):
         """get the forecast, return an array of forecast records."""
