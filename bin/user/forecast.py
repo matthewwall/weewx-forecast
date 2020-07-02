@@ -1258,7 +1258,7 @@ class Forecast(StdService):
 #        sql = "select max(dateTime),issued_ts from %s where method = '%s'" % (table, method_id)
         r = dbm.getSql(sql)
         if r is None:
-            return None
+            return 0
         logdbg('%s: last forecast issued %s, requested %s' %
                (method_id,
                 weeutil.weeutil.timestamp_to_string(r[1]),
