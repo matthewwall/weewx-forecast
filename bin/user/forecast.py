@@ -6,7 +6,7 @@
 Compatibility:
 
    US National Weather Service (NWS) point forecasts as of July 2013
-   Weather Underground (WU) forecast10day and hourly10day as of July 2013
+   Weather Underground (WU) 5day as of ~January 2020
    OpenWeatherMap 5-day/3-hour forecast as of January 2016
    UK Met Office 5-day/3-hour forecast as of 26 January 2016
    Aeris Weather as of 27 January 2016
@@ -130,22 +130,25 @@ Configuration
         #   http://www.wunderground.com/weather/api/
         api_key = KEY
 
-        # The location for the forecast can be one of the following:
-        #   CA/San_Francisco     - US state/city
-        #   60290                - US zip code
-        #   Australia/Sydney     - Country/City
-        #   37.8,-122.4          - latitude,longitude
-        #   KJFK                 - airport code
-        #   pws:KCASANFR70       - PWS id
-        #   autoip               - AutoIP address location
-        #   autoip.json?geo_ip=38.102.136.138 - specific IP address location
-        # If no location is specified, station latitude and longitude are used
-        #location = 02139
+        # To specify the location for which to generate a forecast, one can specify
+        # the Geocode (lat, long), IATA Code, ICAO Code, Place ID or Postal Key.
+        #
+        # These options are listed here:
+        # https://docs.google.com/document/d/1_Zte7-SdOjnzBttb1-Y9e0Wgl0_3tah9dSwXUyEA3-c/
+        #
+        # If none of the following is specified, the station's latititude and longitude
+        # will be used.  If more than one is specified, the first will be used according
+        # to the order listed here.
+        #
+        # geocode   - "33.74,-84.39"
+        # iataCode  - DEN
+        # icaoCode  - KDEN
+        # placeid   - 327145917e06d09373dd2760425a88622a62d248fd97550eb4883737d8d1173b
+        # postalKey - 81657:US
 
-        # There are two types of forecast available, daily for 10 days and
-        # hourly for 10 days.  Default is hourly for 10 days.
-        #forecast_type = forecast10day
-        #forecast_type = hourly10day
+        # The 5day forecast will be generated.  It is the forecast available with the
+        # free API key one can obtain for providing station data to WU.
+        # The 5day forecast is actually six days (if the current day is counted).
 
         # How often to download the forecast, in seconds
         #interval = 10800
@@ -552,7 +555,7 @@ import weeutil.weeutil
 from weewx.engine import StdService
 from weewx.cheetahgenerator import SearchList
 
-VERSION = "3.4.0b5"
+VERSION = "3.4.0b6"
 
 if weewx.__version__ < "4":
     raise weewx.UnsupportedFeature(
@@ -586,12 +589,6 @@ def mkdir_p(path):
 # FIXME: provide a 'reported_location' field for loc as returned by api call
 
 # FIXME: extend the schema to include the following attributes:
-
-# WU defines the following:
-#  maxhumidity
-#  minhumidity
-#  feelslike
-#  mslp - mean sea level pressure
 
 # OWM defines the following:
 #  pressure
@@ -701,38 +698,38 @@ def mkdir_p(path):
 
    zcode      used only by zambretti forecast
 
-   database   nws                  wu-daily         wu-hourly        owm
-   ---------- -------------------- ---------------- ---------------- ----------
+   database   nws                  wu-5day                       owm
+   ---------- -------------------- ----------------------------- ----------
 
-   hour       3HRLY | 6HRLY        date.hour        FCTTIME.hour     3
-   tempMin    MIN/MAX | MAX/MIN    low.fahrenheit                    temp_min
-   tempMax    MIN/MAX | MAX/MIN    high.fahrenheit                   temp_max
-   temp       TEMP                                  temp.english     temp
-   dewpoint   DEWPT                                 dewpoint.english
-   humidity   RH                   avehumidity      humidity         humidity
-   windDir    WIND DIR | PWIND DIR avewind.dir      wdir.dir         wind.deg
-   windSpeed  WIND SPD             avewind.mph      wspd.english     wind.speed
-   windGust   WIND GUST            maxwind.mph
+   hour       3HRLY | 6HRLY        5day                          3
+   tempMin    MIN/MAX | MAX/MIN    tempertureMax                 temp_min
+   tempMax    MIN/MAX | MAX/MIN    tempertureMin                 temp_max
+   temp       TEMP                 daypart.temperature           temp
+   dewpoint   DEWPT
+   humidity   RH                   daypart.relativeHumidity      humidity
+   windDir    WIND DIR | PWIND DIR daypart.windDirectionCardinal wind.deg
+   windSpeed  WIND SPD             daypart.windSpeed             wind.speed
+   windGust   WIND GUST
    windChar   WIND CHAR
-   clouds     CLOUDS | AVG CLOUDS  skyicon          sky              clouds.all
-   pop        POP 12HR             pop              pop
-   qpf        QPF 12HR             qpf_allday.in    qpf.english      rain.3h
-   qsf        SNOW 12HR            snow_allday.in   qsf.english      snow.3h
-   rain       RAIN                                  wx/condition
-   rainshwrs  RAIN SHWRS                            wx/condition
-   tstms      TSTMS                                 wx/condition
-   drizzle    DRIZZLE                               wx/condition
-   snow       SNOW                                  wx/condition
-   snowshwrs  SNOWSHWRS                             wx/condition
-   flurries   FLURRIES                              wx/condition
-   sleet      SLEET                                 wx/condition
-   frzngrain  FRZNG RAIN                            wx/condition
-   frzngdrzl  FRZNG DRZL                            wx/condition
-   hail                                             wx/condition
-   obvis      OBVIS                                 wx/condition
-   windChill  WIND CHILL                            windchill
-   heatIndex  HEAT INDEX                            heatindex
-   uvIndex                                          uvi
+   clouds     CLOUDS | AVG CLOUDS  daypart.wxDayShort            clouds.all
+   pop        POP 12HR             daypart.precipChance
+   qpf        QPF 12HR             daypart.qpf                   rain.3h
+   qsf        SNOW 12HR            daypart.qpfSnow               snow.3h
+   rain       RAIN
+   rainshwrs  RAIN SHWRS
+   tstms      TSTMS
+   drizzle    DRIZZLE
+   snow       SNOW
+   snowshwrs  SNOWSHWRS
+   flurries   FLURRIES
+   sleet      SLEET
+   frzngrain  FRZNG RAIN
+   frzngdrzl  FRZNG DRZL
+   hail
+   obvis      OBVIS
+   windChill  WIND CHILL           daypart.temperatureWindChill
+   heatIndex  HEAT INDEX           daypart.temperatureHeatIndex
+   uvIndex                         daypart.uvIndex
    airQuality
 
    database   ukmo     aeris         wwo            dark sky
@@ -2391,145 +2388,14 @@ class DSForecast(Forecast):
 # an api that returns json/xml data.  This implementation uses the json format.
 #
 # For the weather underground api, see:
-#   http://www.wunderground.com/weather/api/d/docs?MR=1
+#   https://docs.google.com/document/d/1_Zte7-SdOjnzBttb1-Y9e0Wgl0_3tah9dSwXUyEA3-c/
 #
-# There are two WU forecasts - daily (forecast10day) and hourly (hourly10day)
+# WU provides a 5-day daily forecast
 #
-# A forecast from WU contains a number of fields whose contents may overlap
-# with other fields.  These include:
-#   condition - not well defined
-#   wx - imported from us nws forecast
-#   fctcode - forecast code
-# There is overlap between condition, wx, and fctcode.  Also, each may contain
-# any combination of precip, obvis, and sky cover.
-#
-# forecast10day ---------------------------------------------------------------
-#
-# date
-# period
-# high
-# low
-# conditions
-# icon
-# icon_url
-# skyicon
-# pop
-# qpf_allday
-# qpf_day
-# qpf_night
-# snow_allday
-# snow_day
-# snow_night
-# maxwind
-# avewind
-# avehumidity
-# maxhumidity
-# minhumidity
-#
-# hourly10day -----------------------------------------------------------------
-#
-# fcttime
-# dewpoint
-# condition
-# icon
-# icon_url
-# fctcode
-#    1 clear
-#    2 partly cloudy
-#    3 mostly cloudy
-#    4 cloudy
-#    5 hazy
-#    6 foggy
-#    7 very hot
-#    8 very cold
-#    9 blowing snow
-#   10 chance of showers
-#   11 showers
-#   12 chance of rain
-#   13 rain
-#   14 chance of a thunderstorm
-#   15 thunderstorm
-#   16 flurries
-#   17
-#   18 chance of snow showers
-#   19 snow showers
-#   20 chance of snow
-#   21 snow
-#   22 chance of ice pellets
-#   23 ice pellets
-#   24 blizzard
-# sky
-# wspd
-# wdir
-# wx
-# uvi
-# humidity
-# windchill
-# heatindex
-# feelslike
-# qpf
-# snow
-# pop
-# mslp
-#
-# codes for condition
-#   [Light/Heavy] Drizzle
-#   [Light/Heavy] Rain
-#   [Light/Heavy] Snow
-#   [Light/Heavy] Snow Grains
-#   [Light/Heavy] Ice Crystals
-#   [Light/Heavy] Ice Pellets
-#   [Light/Heavy] Hail
-#   [Light/Heavy] Mist
-#   [Light/Heavy] Fog
-#   [Light/Heavy] Fog Patches
-#   [Light/Heavy] Smoke
-#   [Light/Heavy] Volcanic Ash
-#   [Light/Heavy] Widespread Dust
-#   [Light/Heavy] Sand
-#   [Light/Heavy] Haze
-#   [Light/Heavy] Spray
-#   [Light/Heavy] Dust Whirls
-#   [Light/Heavy] Sandstorm
-#   [Light/Heavy] Low Drifting Snow
-#   [Light/Heavy] Low Drifting Widespread Dust
-#   [Light/Heavy] Low Drifting Sand
-#   [Light/Heavy] Blowing Snow
-#   [Light/Heavy] Blowing Widespread Dust
-#   [Light/Heavy] Blowing Sand
-#   [Light/Heavy] Rain Mist
-#   [Light/Heavy] Rain Showers
-#   [Light/Heavy] Snow Showers
-#   [Light/Heavy] Snow Blowing Snow Mist
-#   [Light/Heavy] Ice Pellet Showers
-#   [Light/Heavy] Hail Showers
-#   [Light/Heavy] Small Hail Showers
-#   [Light/Heavy] Thunderstorm
-#   [Light/Heavy] Thunderstorms and Rain
-#   [Light/Heavy] Thunderstorms and Snow
-#   [Light/Heavy] Thunderstorms and Ice Pellets
-#   [Light/Heavy] Thunderstorms with Hail
-#   [Light/Heavy] Thunderstorms with Small Hail
-#   [Light/Heavy] Freezing Drizzle
-#   [Light/Heavy] Freezing Rain
-#   [Light/Heavy] Freezing Fog
-#   Patches of Fog
-#   Shallow Fog
-#   Partial Fog
-#   Overcast
-#   Clear
-#   Partly Cloudy
-#   Mostly Cloudy
-#   Scattered Clouds
-#   Small Hail
-#   Squalls
-#   Funnel Cloud
-#   Unknown Precipitation
-#   Unknown
 # -----------------------------------------------------------------------------
 
 WU_KEY = 'WU'
-WU_DEFAULT_URL = 'http://api.wunderground.com/api'
+WU_DEFAULT_URL = 'https://api.weather.com/'
 
 class WUForecast(Forecast):
 
@@ -2540,11 +2406,30 @@ class WUForecast(Forecast):
         self.url = d.get('url', WU_DEFAULT_URL)
         self.max_tries = int(d.get('max_tries', 3))
         self.api_key = d.get('api_key', None)
-        self.location = d.get('location', None)
-        self.forecast_type = d.get('forecast_type', 'hourly10day')
+        # geocode   - "33.74,-84.39"
+        # iataCode  - DEN
+        # icaoCode  - KDEN
+        # placeid   - 327145917e06d09373dd2760425a88622a62d248fd97550eb4883737d8d1173b
+        # postalKey - 81657
+        geocode = d.get('geocode', None)
+        iataCode = d.get('iataCode', None)
+        icaoCode = d.get('icaoCode', None)
+        placeid = d.get('placeid', None)
+        postalKey = d.get('postalKey', None)
 
-        if self.location is None:
-            self.location = Forecast.get_loc_from_station(config_dict)
+        if geocode is None and iataCode is None and icaoCode is None and placeid is None and postalKey is None:
+            geocode = Forecast.get_loc_from_station(config_dict)
+
+        if geocode is not None:
+            self.location = 'geocode=%s' % geocode
+        elif iataCode is not None:
+            self.location = 'iataCode=%s' % iataCode
+        elif icaoCode is not None:
+            self.location = 'icaoCode=%s' % icaoCode
+        elif placeid is not None:
+            self.location = 'placeid=%s' % placeid
+        elif postalKey is not None:
+            self.location = 'postalKey=%s' % postalKey
 
         errmsg = []
         if json is None:
@@ -2559,15 +2444,13 @@ class WUForecast(Forecast):
             logerr('%s: forecast will not be run' % WU_KEY)
             return
 
-        loginf('%s: interval=%s max_age=%s api_key=%s location=%s fc=%s' %
+        loginf('%s: interval=%s max_age=%s api_key=%s %s' %
                (WU_KEY, self.interval, self.max_age,
-                self.obfuscate(self.api_key), self.location,
-                self.forecast_type))
+                self.obfuscate(self.api_key), self.location))
         self._bind()
 
     def get_forecast(self, dummy_event):
         text = self.download(self.api_key, self.location, url=self.url,
-                             fc_type=self.forecast_type,
                              max_tries=self.max_tries)
         if text is None:
             logerr('%s: no forecast data for %s from %s' %
@@ -2582,25 +2465,22 @@ class WUForecast(Forecast):
         return records
 
     @staticmethod
-    def download(api_key, location, url=WU_DEFAULT_URL,
-                 fc_type='hourly10day', max_tries=3):
+    def download(api_key, location, url=WU_DEFAULT_URL, max_tries=3):
         """Download a forecast from the Weather Underground
 
         api_key - key for downloading
 
-        location - lat/lon, post code, or other location identifier
+        location - lat/lon
 
         url - URL to the forecast service.  if anything other than the
               default is specified, that entire URL is used.  if the default
               is specified, it is used as the base and other items are added
               to it.
 
-        fc_type - forecast type, one of hourly10day or forecast10day
-
         max_tries - how many times to try before giving up
         """
 
-        u = '%s/%s/%s/q/%s.json' % (url, api_key, fc_type, location) \
+        u = '%s/v3/wx/forecast/daily/5day?%s&format=json&units=e&language=en-US&apiKey=%s' % (url, location, api_key) \
             if url == WU_DEFAULT_URL else url
         masked = Forecast.get_masked_url(u, api_key)
         loginf("%s: download forecast from '%s'" % (WU_KEY, masked))
@@ -2619,16 +2499,9 @@ class WUForecast(Forecast):
 
     @staticmethod
     def parse(text, issued_ts=None, now=None, location=None):
-        obj = json.loads(text)
-        if not 'response' in obj:
-            msg = "%s: no 'response' in json object" % WU_KEY
-            logerr(msg)
-            return [], [msg]
-        response = obj['response']
-        if 'error' in response:
-            msg = '%s: error in response: %s: %s' % (
-                WU_KEY, response['error']['type'],
-                response['error']['description'])
+        response = json.loads(text)
+        if not 'validTimeUtc' in response:
+            msg = "%s: no 'validTimeUtc' in json object" % WU_KEY
             logerr(msg)
             return [], [msg]
 
@@ -2641,129 +2514,92 @@ class WUForecast(Forecast):
 
         records = []
         msgs = []
-        if 'hourly_forecast' in obj:
-            records, msgs = WUForecast.create_records_from_hourly(
-                obj, issued_ts, now, location=location)
-        elif 'forecast' in obj:
-            records, msgs = WUForecast.create_records_from_daily(
-                obj, issued_ts, now, location=location)
-        else:
-            msg = "%s: cannot find 'hourly_forecast' or 'forecast'" % WU_KEY
-            logerr(msg)
-            msgs.append(msg)
+        records, msgs = WUForecast.create_records_from_five_day(
+           response, issued_ts, now, location=location)
         return records, msgs
 
     @staticmethod
-    def create_records_from_hourly(fc, issued_ts, now, location=None):
-        """create from hourly10day"""
+    def create_records_from_five_day(fc, issued_ts, now, location=None):
         msgs = []
         records = []
-        cnt = 0
-        for period in fc['hourly_forecast']:
+        day_index = 0
+        for seven_am_date in fc['validTimeUtc']:
             try:
-                cnt += 1
-                r = {}
-                r['method'] = WU_KEY
-                r['usUnits'] = weewx.US
-                r['dateTime'] = now
-                r['issued_ts'] = issued_ts
-                r['event_ts'] = Forecast.str2int(
-                    'epoch', period['FCTTIME']['epoch'], WU_KEY)
-                r['hour'] = Forecast.str2int(
-                    'hour', period['FCTTIME']['hour'], WU_KEY)
-                r['duration'] = 3600
-                r['clouds'] = Forecast.pct2clouds(period['sky'])
-                r['temp'] = Forecast.str2float(
-                    'temp', period['temp']['english'], WU_KEY)
-                r['dewpoint'] = Forecast.str2float(
-                    'dewpoint', period['dewpoint']['english'], WU_KEY)
-                r['humidity'] = Forecast.str2int(
-                    'humidity', period['humidity'], WU_KEY)
-                r['windSpeed'] = Forecast.str2float(
-                    'wspd', period['wspd']['english'], WU_KEY)
-                r['windDir'] = WUForecast.WU_DIR_DICT.get(
-                    period['wdir']['dir'], period['wdir']['dir'])
-                r['pop'] = Forecast.str2int(
-                    'pop', period['pop'], WU_KEY)
-                r['qpf'] = Forecast.str2float(
-                    'qpf', period['qpf']['english'], WU_KEY)
-                r['qsf'] = Forecast.str2float(
-                    'snow', period['snow']['english'], WU_KEY)
-                r['obvis'] = WUForecast.wu2obvis(period)
-                r['uvIndex'] = Forecast.str2int('uvi', period['uvi'], WU_KEY)
-                r.update(WUForecast.wu2precip(period))
-                if location is not None:
-                    r['location'] = location
-                records.append(r)
+                event_ts = Forecast.str2int('epoch', seven_am_date, WU_KEY)
+                for half_day_index in range(2):
+                    daypart_index = day_index * 2
+                    hour = 7
+                    if half_day_index == 1:
+                        # Add 12 hours
+                        event_ts += 12 * 3600
+                        hour += 12
+                        daypart_index += 1
+                    if fc['daypart'][0]['daypartName'][daypart_index] is not None:
+                        r = {}
+                        r['method'] = WU_KEY
+                        r['usUnits'] = weewx.US
+                        r['dateTime'] = now
+                        r['issued_ts'] = issued_ts
+                        r['event_ts'] = event_ts
+                        r['hour'] = hour
+                        r['duration'] = 12 * 3600
+                        r['clouds'] = WUForecast.WU_SKY_DICT.get(fc['daypart'][0]['wxPhraseShort'][daypart_index])
+                        if half_day_index == 0:
+                            r['tempMax'] = Forecast.str2float(
+                                'temperatureMax', fc['temperatureMax'][half_day_index], WU_KEY)
+                        else:
+                            r['tempMin'] = Forecast.str2float(
+                                'temperatureMin', fc['temperatureMin'][half_day_index], WU_KEY)
+                        r['temp'] = fc['daypart'][0]['temperature'][daypart_index]
+                        r['humidity'] = Forecast.str2int(
+                            'relativeHumidity', fc['daypart'][0]['relativeHumidity'][daypart_index], WU_KEY)
+                        r['pop'] = Forecast.str2int(
+                            'precipChance', fc['daypart'][0]['precipChance'][daypart_index], WU_KEY)
+                        r['qpf'] = Forecast.str2float(
+                            'qpf', fc['daypart'][0]['qpf'][daypart_index], WU_KEY)
+                        r['qsf'] = Forecast.str2float(
+                            'qsfSnow', fc['daypart'][0]['qpfSnow'][daypart_index], WU_KEY)
+                        r['windSpeed'] = Forecast.str2float(
+                            'windSpeed', fc['daypart'][0]['windSpeed'][daypart_index], WU_KEY)
+                        r['windDir'] = fc['daypart'][0]['windDirectionCardinal'][daypart_index]
+                        r['heatIndex'] = Forecast.str2float(
+                            'temperatureHeatIndex', fc['daypart'][0]['temperatureHeatIndex'][daypart_index], WU_KEY)
+                        r['windChill'] = Forecast.str2float(
+                            'temperatureWindChill', fc['daypart'][0]['temperatureWindChill'][daypart_index], WU_KEY)
+                        r['uvIndex'] = Forecast.str2float(
+                            'uvIndex', fc['daypart'][0]['uvIndex'][daypart_index], WU_KEY)
+                        if location is not None:
+                            r['location'] = location
+                        records.append(r)
+                day_index += 1
             except KeyError as e:
-                msg = '%s: failure in hourly forecast period %d: %s' % (
-                    WU_KEY, cnt, e)
-                msgs.append(msg)
-                logerr(msg)
-        return records, msgs
+                weeutil.logger.log_traceback(log.error, "    ****  ")
+                try:
+                    msg = '%s: failure in forecast period, day_index: %d, half_day_index: %d:  %s' % (
+                        WU_KEY, day_index, half_day_index if half_day_index is not None else -1, e)
+                    msgs.append(msg)
+                    logerr(msg)
+                except Exception as e1:
+                    logerr('KeyError: %s' % e1)
+            except Exception as e:
+                weeutil.logger.log_traceback(log.error, "    ****  ")
+                try:
+                    msg = 'create_records_from_five_day: %s: failure in forecast period, day_index: %d, half_day_index: %d:  %s' % (
+                        WU_KEY, day_index, half_day_index if half_day_index is not None else -1, e)
+                    msgs.append(msg)
+                    logerr(msg)
+                except Exception as e1:
+                    logerr('Exception: %s' % e1)
 
-    @staticmethod
-    def create_records_from_daily(fc, issued_ts, now, location=None):
-        """create from forecast10day data"""
-        msgs = []
-        records = []
-        cnt = 0
-        for period in fc['forecast']['simpleforecast']['forecastday']:
-            try:
-                cnt += 1
-                r = {}
-                r['method'] = WU_KEY
-                r['usUnits'] = weewx.US
-                r['dateTime'] = now
-                r['issued_ts'] = issued_ts
-                r['event_ts'] = Forecast.str2int(
-                    'epoch', period['date']['epoch'], WU_KEY)
-                r['hour'] = Forecast.str2int(
-                    'hour', period['date']['hour'], WU_KEY)
-                r['duration'] = 24 * 3600
-                r['clouds'] = WUForecast.WU_SKY_DICT.get(period['skyicon'])
-                r['tempMin'] = Forecast.str2float(
-                    'low', period['low']['fahrenheit'], WU_KEY)
-                r['tempMax'] = Forecast.str2float(
-                    'high', period['high']['fahrenheit'], WU_KEY)
-                r['temp'] = (r['tempMin'] + r['tempMax']) / 2
-                r['humidity'] = Forecast.str2int(
-                    'humidity', period['avehumidity'], WU_KEY)
-                r['pop'] = Forecast.str2int('pop', period['pop'], WU_KEY)
-                r['qpf'] = Forecast.str2float(
-                    'qpf', period['qpf_allday']['in'], WU_KEY)
-                r['qsf'] = Forecast.str2float(
-                    'qsf', period['snow_allday']['in'], WU_KEY)
-                r['windSpeed'] = Forecast.str2float(
-                    'avewind', period['avewind']['mph'], WU_KEY)
-                r['windDir'] = WUForecast.WU_DIR_DICT.get(
-                    period['avewind']['dir'], period['avewind']['dir'])
-                r['windGust'] = Forecast.str2float(
-                    'maxwind', period['maxwind']['mph'], WU_KEY)
-                if location is not None:
-                    r['location'] = location
-                records.append(r)
-            except KeyError as e:
-                msg = '%s: failure in daily forecast period %d: %s' % (
-                    WU_KEY, cnt, e)
-                msgs.append(msg)
-                logerr(msg)
         return records, msgs
-
-    WU_DIR_DICT = {
-        'North': 'N',
-        'South': 'S',
-        'East': 'E',
-        'West': 'W'}
 
     WU_SKY_DICT = {
-        'sunny': 'CL',
-        'mostlysunny': 'FW',
-        'partlysunny': 'SC',
-        'FIXME': 'BK', # FIXME: NWS defines BK, but WU has nothing equivalent
-        'partlycloudy': 'B1',
-        'mostlycloudy': 'B2',
-        'cloudy': 'OV'}
+        'Sunny': 'CL',
+        'M Sunny': 'FW',
+        'P Sunny': 'SC',
+        'P Cloudy': 'B1',
+        'M Cloudy': 'B2',
+        'Cloudy': 'OV'}
 
     str2precip_dict = {
         # nws precip strings
@@ -5098,6 +4934,11 @@ if __name__ == "__main__":
                     records, msgs = DSForecast.parse(text,
                                                      location=options.loc,
                                                      fc_type=options.type)
+                    print(records)
+                    print(msgs)
+                elif options.method.lower() == 'wu':
+                    records, msgs = WUForecast.parse(text,
+                                                     location=options.loc)
                     print(records)
                     print(msgs)
         elif options.action == 'compare':
