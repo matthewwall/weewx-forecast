@@ -1900,7 +1900,7 @@ def filldata(matrix, nidx, rows, indices, i2h):
             if l == 3 or q % 4 == 0:
                 s = 0 if i - l + 1 < 0 else i - l + 1
                 chunk = rows[label][s:i + 1].strip()
-                if len(chunk) > 0:
+                if len(chunk) > 0 and chunk != 'MM':
                     matrix[label][indices[i]] = chunk
             q += 1
 
