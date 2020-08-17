@@ -38,16 +38,16 @@
 #set $local_settings = dict()
 
 ## First look for values from skin.conf or weewx.conf
-#if $varExists('Extras') and $varExists('Extras.forecast_iconic_settings')
-  #for $sv in $Extras.forecast_iconic_settings.keys()
-    #set $local_settings[$sv] = $Extras.forecast_iconic_settings[$sv]
+#if $varExists('Extras') and $varExists('Extras.forecast_compact_settings')
+  #for $sv in $Extras.forecast_compact_settings.keys()
+    #set $local_settings[$sv] = $Extras.forecast_compact_settings[$sv]
   #end for
 #end if
 
 ## Look for overrides defined by any template that includes this file
-#if $varExists('forecast_iconic_settings')
-  #for $sv in $forecast_iconic_settings.keys()
-    #set $local_settings[$sv] = $forecast_iconic_settings[$sv]
+#if $varExists('forecast_compact_settings')
+  #for $sv in $forecast_compact_settings.keys()
+    #set $local_settings[$sv] = $forecast_compact_settings[$sv]
   #end for
 #end if
 
