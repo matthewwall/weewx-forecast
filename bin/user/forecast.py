@@ -2543,7 +2543,20 @@ class WUForecast(Forecast):
                         r['event_ts'] = event_ts
                         r['hour'] = hour
                         r['duration'] = 12 * 3600
-                        r['clouds'] = WUForecast.WU_SKY_DICT.get(fc['daypart'][0]['wxPhraseShort'][daypart_index])
+                        # Clouds
+                        cloud_cover_pct = fc['daypart'][0]['cloudCover'][daypart_index]
+                        if cloud_cover_pct == 0:
+                            r['clouds'] = 'CL'
+                        elif cloud_cover_pct < 25:
+                            r['clouds'] = 'FW'
+                        elif cloud_cover_pct < 50:
+                            r['clouds'] = 'SC'
+                        elif cloud_cover_pct == 50:
+                            r['clouds'] = 'BK'
+                        elif cloud_cover_pct < 75:
+                            r['clouds'] = 'B1'
+                        else:
+                            r['clouds'] = 'OV'
                         if half_day_index == 0:
                             r['tempMax'] = Forecast.str2float(
                                 'temperatureMax', fc['temperatureMax'][half_day_index], WU_KEY)
@@ -2592,14 +2605,6 @@ class WUForecast(Forecast):
                     logerr('Exception: %s' % e1)
 
         return records, msgs
-
-    WU_SKY_DICT = {
-        'Sunny': 'CL',
-        'M Sunny': 'FW',
-        'P Sunny': 'SC',
-        'P Cloudy': 'B1',
-        'M Cloudy': 'B2',
-        'Cloudy': 'OV'}
 
     str2precip_dict = {
         # nws precip strings
