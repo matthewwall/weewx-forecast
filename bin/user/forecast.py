@@ -555,7 +555,7 @@ import weeutil.weeutil
 from weewx.engine import StdService
 from weewx.cheetahgenerator import SearchList
 
-VERSION = "3.4.0b6"
+VERSION = "3.4.0b7"
 
 if weewx.__version__ < "4":
     raise weewx.UnsupportedFeature(
