@@ -555,7 +555,7 @@ import weeutil.weeutil
 from weewx.engine import StdService
 from weewx.cheetahgenerator import SearchList
 
-VERSION = "3.4.0b7"
+VERSION = "3.4.0b8"
 
 if weewx.__version__ < "4":
     raise weewx.UnsupportedFeature(
@@ -2557,6 +2557,20 @@ class WUForecast(Forecast):
                             r['clouds'] = 'B1'
                         else:
                             r['clouds'] = 'OV'
+                        # Precip
+                        precip_type = fc['daypart'][0]['precipType'][daypart_index]
+                        precip_chance = fc['daypart'][0]['precipChance'][daypart_index]
+                        if precip_chance > 0 and (precip_type == 'rain' or precip_type == 'snow'):
+                            if precip_chance < 30:
+                                r[precip_type] = 'S'
+                            elif precip_chance < 60:
+                                r[precip_type] = 'C'
+                            elif precip_chance < 80:
+                                r[precip_type] = 'L'
+                            elif precip_chance < 100:
+                                r[precip_type] = 'O'
+                            else:
+                                r[precip_type] = 'D'
                         if half_day_index == 0:
                             r['tempMax'] = Forecast.str2float(
                                 'temperatureMax', fc['temperatureMax'][half_day_index], WU_KEY)
