@@ -555,7 +555,7 @@ import weeutil.weeutil
 from weewx.engine import StdService
 from weewx.cheetahgenerator import SearchList
 
-VERSION = "3.4.0b8"
+VERSION = "3.4.0b9"
 
 if weewx.__version__ < "4":
     raise weewx.UnsupportedFeature(
@@ -2561,16 +2561,34 @@ class WUForecast(Forecast):
                         precip_type = fc['daypart'][0]['precipType'][daypart_index]
                         precip_chance = fc['daypart'][0]['precipChance'][daypart_index]
                         if precip_chance > 0 and (precip_type == 'rain' or precip_type == 'snow'):
-                            if precip_chance < 30:
-                                r[precip_type] = 'S'
-                            elif precip_chance < 60:
-                                r[precip_type] = 'C'
-                            elif precip_chance < 80:
-                                r[precip_type] = 'L'
-                            elif precip_chance < 100:
-                                r[precip_type] = 'O'
-                            else:
-                                r[precip_type] = 'D'
+                            r[precip_type] = WUForecast.code_from_precip_chance(precip_chance)
+                        # ThunderStorms
+                        #wu_tstms_dict = {
+                        #    0: None,
+                        #    1: 'S',
+                        #    2: 'C',
+                        #    3: 'L',
+                        #    4: 'O',
+                        #    5: 'D'}
+                        #thunder_index = fc['daypart'][0]['thunderIndex'][daypart_index]
+                        #if thunder_index > 0:
+                        #    r['tstms'] = wu_tstms_dict[thunder_index]
+                        # Look for other precip in iconCode
+                        icon_code = fc['daypart'][0]['iconCode'][daypart_index]
+                        if icon_code == 4 or icon_code == 37 or icon_code == 38 or icon_code == 47:
+                            r['tstms'] = WUForecast.code_from_precip_chance(precip_chance)
+                        if icon_code == 4 or icon_code == 17 or icon_code == 35:
+                            r['hail'] = WUForecast.code_from_precip_chance(precip_chance)
+                        if icon_code == 9:
+                            r['drizzle'] = WUForecast.code_from_precip_chance(precip_chance)
+                        if icon_code == 6 or icon_code == 7 or icon_code == 18:
+                            r['sleet'] = WUForecast.code_from_precip_chance(precip_chance)
+                        if icon_code == 8:
+                            r['frzngdrzl'] = WUForecast.code_from_precip_chance(precip_chance)
+                        if icon_code == 10:
+                            r['frzngrain'] = WUForecast.code_from_precip_chance(precip_chance)
+                        if icon_code == 13:
+                            r['flurries'] = WUForecast.code_from_precip_chance(precip_chance)
                         if half_day_index == 0:
                             r['tempMax'] = Forecast.str2float(
                                 'temperatureMax', fc['temperatureMax'][half_day_index], WU_KEY)
@@ -2716,6 +2734,19 @@ class WUForecast(Forecast):
         '9': 'BS',
         '24': 'BS',
     }
+
+    @staticmethod
+    def code_from_precip_chance(precip_chance):
+        if precip_chance < 30:
+            return 'S'
+        elif precip_chance < 60:
+            return 'C'
+        elif precip_chance < 80:
+            return 'L'
+        elif precip_chance < 100:
+            return 'O'
+        else:
+            return 'D'
 
     @staticmethod
     def str2pc(s):
