@@ -1,3 +1,5 @@
+#errorCatcher Echo
+#encoding UTF-8
 ## forecast table - Copyright 2012-2016 Matthew Wall
 ## $Id: forecast_table.inc 1745 2017-09-21 03:54:21Z mwall $
 #set $forecast_table_version = 0.6
@@ -475,14 +477,14 @@ function toggle_hours(control, id) {
  for $wloc
 #end if
 #if $wts is not None and $wts != ''
- issued on $wts
+ issued on $wts.
 #end if
 #if $show_tides and $tides is not None and len($tides) > 0
-      <br/>tides for $tides[0].location issued on $tides[0].issued_ts
+      <br/>Tides for $tides[0].location issued on $tides[0].issued_ts
 #end if
 #set $t1 = time.time()
 #set $elapsed = "%.3f" % ($t1 - $t0)
-     <br/>report generated in $elapsed s
+     <br/>Report generated in $elapsed seconds.
     </p>
   </div>
 

@@ -435,7 +435,7 @@ function create_summary(summary_data) {
   if(summary_data.issued_ts != '') {
     html += " issued on " + summary_data.issued_ts;
   }
-  html += "<br/>report generated in " + summary_data.elapsed + " s";
+  html += "<br/>Report generated in " + summary_data.elapsed + " seconds.";
   d.innerHTML = html;
   return d;
 }
