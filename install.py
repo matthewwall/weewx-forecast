@@ -10,7 +10,7 @@ def loader():
 class ForecastInstaller(ExtensionInstaller):
     def __init__(self):
         super(ForecastInstaller, self).__init__(
-            version="3.4.0b9",
+            version="3.4.0b10",
             name='forecast',
             description='Generate and display weather and tide forecasts.',
             author="Matthew Wall",
@@ -128,6 +128,7 @@ class ForecastInstaller(ExtensionInstaller):
                      'skins/forecast/icons/flag.png',
                      'skins/forecast/icons/flurries.png',
                      'skins/forecast/icons/frzngdrzl.png',
+                     'skins/forecast/icons/hail.png',
                      'skins/forecast/icons/moon.png',
                      'skins/forecast/icons/moonphase.png',
                      'skins/forecast/icons/moonrise.png',
