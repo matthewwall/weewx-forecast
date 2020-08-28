@@ -128,6 +128,7 @@ class ForecastInstaller(ExtensionInstaller):
                      'skins/forecast/icons/flag.png',
                      'skins/forecast/icons/flurries.png',
                      'skins/forecast/icons/frzngdrzl.png',
+                     'skins/forecast/icons/frzngrain.png',
                      'skins/forecast/icons/hail.png',
                      'skins/forecast/icons/moon.png',
                      'skins/forecast/icons/moonphase.png',
