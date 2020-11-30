@@ -2589,12 +2589,10 @@ class WUForecast(Forecast):
                         if icon_code == 13:
                             if precip_chance > 20:
                                 r['flurries'] = WUForecast.code_from_precip_chance(precip_chance)
-                        if half_day_index == 0:
-                            r['tempMax'] = Forecast.str2float(
-                                'temperatureMax', fc['temperatureMax'][half_day_index], WU_KEY)
-                        else:
-                            r['tempMin'] = Forecast.str2float(
-                                'temperatureMin', fc['temperatureMin'][half_day_index], WU_KEY)
+                        r['tempMax'] = Forecast.str2float(
+                            'temperatureMax', fc['temperatureMax'][day_index], WU_KEY)
+                        r['tempMin'] = Forecast.str2float(
+                            'temperatureMin', fc['temperatureMin'][day_index], WU_KEY)
                         r['temp'] = fc['daypart'][0]['temperature'][daypart_index]
                         r['humidity'] = Forecast.str2int(
                             'relativeHumidity', fc['daypart'][0]['relativeHumidity'][daypart_index], WU_KEY)
