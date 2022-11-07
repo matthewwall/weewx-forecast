@@ -22,6 +22,7 @@
 #if $varExists('forecast')
 
 #import time
+#import html
 #set $t0 = time.time()
 
 ## Which forecasts should be displayed?
@@ -94,7 +95,7 @@
 ## Define this javascript only once
 #if not $varExists('forecast_table_included')
 #set global $forecast_table_included = 1
-<script type='text/javascript'>
+<script>
 function toggle_hours(control, id) {
   elem = document.getElementById(id + '.hours');
   if(elem) {
@@ -275,7 +276,7 @@ function toggle_hours(control, id) {
 #end if
 #if $show_tides and $tides is not None and len($tides) > 0
         <td class='col-tides'>
-          <table cellspacing='0' cellpadding='0' width='100%'>
+          <table style='width: 100%;padding: 0px;'>
   #for $tide in $tides
     #if $summary.event_ts.raw <= $tide.event_ts.raw < $summary.event_ts.raw + $summary.duration
             <tr>
@@ -315,11 +316,11 @@ function toggle_hours(control, id) {
   #end if
 <br/>
   #if $summary.qpf.raw is not None and $summary.qpf.raw > 0
-          $summary.qpf.nolabel('%.2f','') <img class='pop-img' src='icons/raindrop.png' />
+          $summary.qpf.nolabel('%.2f','') <img class='pop-img' src='icons/raindrop.png' alt='raindrop'/>
   #end if
 <br/>
   #if $summary.qsf.raw is not None and $summary.qsf.raw > 0
-          $summary.qsf.nolabel('%.2f','') <img class='pop-img' src='icons/snowflake.png' />
+          $summary.qsf.nolabel('%.2f','') <img class='pop-img' src='icons/snowflake.png' alt='snowflake'/>
   #end if
         </td>
 #end if
@@ -382,7 +383,7 @@ function toggle_hours(control, id) {
         <td class='col-wind'
   #if $period.windDir is not None
     #set $winddir_img = 'icons/' + $wind_dir_dict.get($period.windDir,$period.windDir) + '.png'
-          background='$winddir_img' style='text-align:center; background-repeat:no-repeat; background-position:center; background-size:32px;'
+          style='text-align:center; background: url($winddir_img); background-repeat:no-repeat; background-position:center; background-size:32px;'
   #end if
             >
           $period.windSpeed.nolabel('%.0f',' ') <span class='windgust'>$period.windGust.nolabel('%.0f',' ')</span>$period.windChar<br/>
@@ -427,30 +428,35 @@ function toggle_hours(control, id) {
   #end if
 <br/>
   #if $period.qpf.raw is not None and $period.qpf.raw > 0
-          $period.qpf.nolabel('%.2f',' ') <img class='pop-img' src='icons/raindrop.png' />
+          $period.qpf.nolabel('%.2f',' ') <img class='pop-img' src='icons/raindrop.png' alt='raindrop'/>
   #end if
 <br/>
   #if $period.qsf.raw is not None and $period.qsf.raw > 0
-          $period.qsf.nolabel('%.2f',' ') <img class='pop-img' src='icons/snowflake.png' />
+          $period.qsf.nolabel('%.2f',' ') <img class='pop-img' src='icons/snowflake.png' alt='snowflake'/>
   #end if
         </td>
 #end if
 #if $show_precip
         <td class='col-precip'>
-          <table width='100%'><tr>
+#if len($period.precip.items()) > 0
+          <table style='width:100%;'><tr>
+#end if
   #for $k,$v in $period.precip.items()
           <td>
     #set $precip_img = 'icons/' + $k + '.png'
             <img class='precip-img' src='$precip_img' alt='$k' title='$forecast.label('Weather', $k)' />
             <br/>
     #if $v != ''
-            $forecast.label('Weather', $v+'q')
+#set escaped_text = html.escape($forecast.label('Weather', $v+'q'))
+            $escaped_text
     #else
             &nbsp;
     #end if
           </td>
   #end for
+#if len($period.precip.items()) > 0
           </tr></table>
+#end if
         </td>
 #end if
 #if $show_obvis
