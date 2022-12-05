@@ -44,7 +44,7 @@
 #set $strip_source = 'WU'
 
 ## How many forecast periods should be considered?
-## Up to 40 for NWS, up to 240 for WU.  More periods take longer to generate.
+## Up to 40 for NWS, up to 12 for WU.  More periods take longer to generate.
 #set $num_periods = 300
 
 ## Orientation: show time shown horizontally or vertically?
@@ -435,7 +435,7 @@ function create_summary(summary_data) {
   if(summary_data.issued_ts != '') {
     html += " issued on " + summary_data.issued_ts;
   }
-  html += "<br/>report generated in " + summary_data.elapsed + " s";
+  html += "<br/>Report generated in " + summary_data.elapsed + " seconds.";
   d.innerHTML = html;
   return d;
 }

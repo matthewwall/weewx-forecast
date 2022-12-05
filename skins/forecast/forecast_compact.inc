@@ -38,26 +38,26 @@
 #set $local_settings = dict()
 
 ## First look for values from skin.conf or weewx.conf
-#if $varExists('Extras') and $varExists('Extras.forecast_iconic_settings')
-  #for $sv in $Extras.forecast_iconic_settings.keys()
-    #set $local_settings[$sv] = $Extras.forecast_iconic_settings[$sv]
+#if $varExists('Extras') and $varExists('Extras.forecast_compact_settings')
+  #for $sv in $Extras.forecast_compact_settings.keys()
+    #set $local_settings[$sv] = $Extras.forecast_compact_settings[$sv]
   #end for
 #end if
 
 ## Look for overrides defined by any template that includes this file
-#if $varExists('forecast_iconic_settings')
-  #for $sv in $forecast_iconic_settings.keys()
-    #set $local_settings[$sv] = $forecast_iconic_settings[$sv]
+#if $varExists('forecast_compact_settings')
+  #for $sv in $forecast_compact_settings.keys()
+    #set $local_settings[$sv] = $forecast_compact_settings[$sv]
   #end for
 #end if
 
 ## Now assign the values that will actually be used
 #set $forecast_source = $local_settings.get('source', $forecast_source)
 #set $num_days = int($local_settings.get('num_days', $num_days))
-#set $show_wind = $local_settings.get('show_wind', $show_wind)
-#set $show_pop = $local_settings.get('show_pop', $show_pop)
-#set $show_precip = $local_settings.get('show_precip', $show_precip)
-#set $show_obvis = $local_settings.get('show_obvis', $show_obvis)
+#set $show_wind = int($local_settings.get('show_wind', $show_wind))
+#set $show_pop = int($local_settings.get('show_pop', $show_pop))
+#set $show_precip = int($local_settings.get('show_precip', $show_precip))
+#set $show_obvis = int($local_settings.get('show_obvis', $show_obvis))
 
 ## pre-calculate the periods
 #set $num_periods = $num_days * 24
@@ -76,7 +76,9 @@
         <div>Min</div>
       </div>
       <div class='row-wind'>Wind</div>
+#if $show_pop
       <div class='row-pop'>PoP</div>
+#end if
     </td>
 #for $d in range($num_days)
 #set $summary = $forecast.weather_summary($forecast_source, $start_ts + $d * 24*3600, periods=$periods)
@@ -132,7 +134,9 @@
       <div class='row-wind'>
         $unit.label.windSpeed
       </div>
+#if $show_pop
       <div class='row-pop'>%</div>
+#end if
     </td>
   </tr>
 </table>

@@ -1,3 +1,5 @@
+#errorCatcher Echo
+#encoding UTF-8
 ## forecast table - Copyright 2012-2016 Matthew Wall
 ## $Id: forecast_table.inc 1745 2017-09-21 03:54:21Z mwall $
 #set $forecast_table_version = 0.6
@@ -20,6 +22,7 @@
 #if $varExists('forecast')
 
 #import time
+#import html
 #set $t0 = time.time()
 
 ## Which forecasts should be displayed?
@@ -92,7 +95,7 @@
 ## Define this javascript only once
 #if not $varExists('forecast_table_included')
 #set global $forecast_table_included = 1
-<script type='text/javascript'>
+<script>
 function toggle_hours(control, id) {
   elem = document.getElementById(id + '.hours');
   if(elem) {
@@ -136,7 +139,7 @@ function toggle_hours(control, id) {
 #end if
 
 
-#if $show_legend and len($periods) > 0
+#if $show_legend and $periods is not None and len($periods) > 0
   <div class='legend'>
     <table>
       <tr>
@@ -158,7 +161,7 @@ function toggle_hours(control, id) {
 #if $show_wind
         <td class='col-wind' style='text-align:center'><img src='icons/flag.png' class='legend-img' alt='W' title='wind' /><br/><span class='units'>$unit.label.wind</span></td>
 #end if
-#if $show_tides and len($tides) > 0
+#if $show_tides and $tides is not None and len($tides) > 0
         <td class='col-tides'><img src='icons/water.png' class='legend-img' alt='tide' title='tides' /><br/><span class='units'>$unit.label.altitude</span></td>
 #end if
 #if $show_sun
@@ -271,9 +274,9 @@ function toggle_hours(control, id) {
           <span class='windgust'>$summary.windGust.nolabel('%.0f',' ')</span>$summary.windChar
         </td>
 #end if
-#if $show_tides and len($tides) > 0
+#if $show_tides and $tides is not None and len($tides) > 0
         <td class='col-tides'>
-          <table cellspacing='0' cellpadding='0' width='100%'>
+          <table style='width: 100%;padding: 0px;'>
   #for $tide in $tides
     #if $summary.event_ts.raw <= $tide.event_ts.raw < $summary.event_ts.raw + $summary.duration
             <tr>
@@ -308,16 +311,16 @@ function toggle_hours(control, id) {
 #end if
 #if $show_pop
         <td class='col-pop'>
-  #if $summary.pop.raw > 0
+  #if $summary.pop.raw is not None and $summary.pop.raw > 0
           $summary.pop.format('%.0f','')
   #end if
 <br/>
-  #if $summary.qpf.raw > 0
-          $summary.qpf.nolabel('%.2f','') <img class='pop-img' src='icons/raindrop.png' />
+  #if $summary.qpf.raw is not None and $summary.qpf.raw > 0
+          $summary.qpf.nolabel('%.2f','') <img class='pop-img' src='icons/raindrop.png' alt='raindrop'/>
   #end if
 <br/>
-  #if $summary.qsf.raw > 0
-          $summary.qsf.nolabel('%.2f','') <img class='pop-img' src='icons/snowflake.png' />
+  #if $summary.qsf.raw is not None and $summary.qsf.raw > 0
+          $summary.qsf.nolabel('%.2f','') <img class='pop-img' src='icons/snowflake.png' alt='snowflake'/>
   #end if
         </td>
 #end if
@@ -380,13 +383,13 @@ function toggle_hours(control, id) {
         <td class='col-wind'
   #if $period.windDir is not None
     #set $winddir_img = 'icons/' + $wind_dir_dict.get($period.windDir,$period.windDir) + '.png'
-          background='$winddir_img' style='text-align:center; background-repeat:no-repeat; background-position:center; background-size:32px;'
+          style='text-align:center; background: url($winddir_img); background-repeat:no-repeat; background-position:center; background-size:32px;'
   #end if
             >
           $period.windSpeed.nolabel('%.0f',' ') <span class='windgust'>$period.windGust.nolabel('%.0f',' ')</span>$period.windChar<br/>
         </td>
 #end if
-#if $show_tides and len($tides) > 0
+#if $show_tides and $tides is not None and len($tides) > 0
         <td class='col-tides'>
   #for $tide in $tides
     #if $period.event_ts.raw <= $tide.event_ts.raw < $period.event_ts.raw + $period.duration and $tide.event_ts.raw < $nextday_ts
@@ -420,35 +423,40 @@ function toggle_hours(control, id) {
 #end if
 #if $show_pop
         <td class='col-pop'>
-  #if $period.pop.raw > 0
+  #if $period.pop.raw is not None and $period.pop.raw > 0
           $period.pop.format('%.0f',' ')
   #end if
 <br/>
-  #if $period.qpf.raw > 0
-          $period.qpf.nolabel('%.2f',' ') <img class='pop-img' src='icons/raindrop.png' />
+  #if $period.qpf.raw is not None and $period.qpf.raw > 0
+          $period.qpf.nolabel('%.2f',' ') <img class='pop-img' src='icons/raindrop.png' alt='raindrop'/>
   #end if
 <br/>
-  #if $period.qsf.raw > 0
-          $period.qsf.nolabel('%.2f',' ') <img class='pop-img' src='icons/snowflake.png' />
+  #if $period.qsf.raw is not None and $period.qsf.raw > 0
+          $period.qsf.nolabel('%.2f',' ') <img class='pop-img' src='icons/snowflake.png' alt='snowflake'/>
   #end if
         </td>
 #end if
 #if $show_precip
         <td class='col-precip'>
-          <table width='100%'><tr>
+#if len($period.precip.items()) > 0
+          <table style='width:100%;'><tr>
+#end if
   #for $k,$v in $period.precip.items()
           <td>
     #set $precip_img = 'icons/' + $k + '.png'
             <img class='precip-img' src='$precip_img' alt='$k' title='$forecast.label('Weather', $k)' />
             <br/>
     #if $v != ''
-            $forecast.label('Weather', $v+'q')
+#set escaped_text = html.escape($forecast.label('Weather', $v+'q'))
+            $escaped_text
     #else
             &nbsp;
     #end if
           </td>
   #end for
+#if len($period.precip.items()) > 0
           </tr></table>
+#end if
         </td>
 #end if
 #if $show_obvis
@@ -463,7 +471,7 @@ function toggle_hours(control, id) {
 #end if  ## show_hourly
 #end for ## period in periods
 
-#if $show_hourly and len($periods) > 0
+#if $show_hourly and $periods is not None and len($periods) > 0
     </table>
   </div>
 #end if
@@ -475,14 +483,14 @@ function toggle_hours(control, id) {
  for $wloc
 #end if
 #if $wts is not None and $wts != ''
- issued on $wts
+ issued on $wts.
 #end if
-#if $show_tides and len($tides) > 0
-      <br/>tides for $tides[0].location issued on $tides[0].issued_ts
+#if $show_tides and $tides is not None and len($tides) > 0
+      <br/>Tides for $tides[0].location issued on $tides[0].issued_ts
 #end if
 #set $t1 = time.time()
 #set $elapsed = "%.3f" % ($t1 - $t0)
-     <br/>report generated in $elapsed s
+     <br/>Report generated in $elapsed seconds.
     </p>
   </div>
 

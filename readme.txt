@@ -78,16 +78,40 @@ Installation instructions:
 
 1) run the installer:
 
-wee_extension --install weewx-forecast.tgz
+wee_extension --install weewx-forecast-3.4.0b11.zip
 
 2) modify weewx.conf for your location:
 
 [Forecast]
     [[NWS]]
-        lid = MAZ014                 # specify a location identifier
-        foid = BOX                   # specify a forecast office identifier
+        lid = MAZ005                        # specify a location identifier
+        foid = BOX                          # specify a forecast office identifier
+        lid_desc = Framingham-Middlesex MA  # (optional) specify a lid description for cases
+                                            # where the lid is repeated in the forecast file
+                                            # and the user does not want the first entry for that lid.
+                                            # Just omit this entry entirely unless you have examined
+                                            # the forecast file and know the description of the repeated
+                                            # lid entry that you want to use.
     [[WU]]
         api_key = XXXXXXXXXXXXXXXX   # specify a weather underground api_key
+        # A location may be specified.  If it isn't, your stations lat/long
+        # will be used.
+        #
+        # To specify the location for which to generate a forecast, one can specify
+        # the Geocode (lat, long), IATA Code, ICAO Code, Place ID or Postal Key.
+        #
+        # These options are listed here:
+        # https://docs.google.com/document/d/1_Zte7-SdOjnzBttb1-Y9e0Wgl0_3tah9dSwXUyEA3-c/
+        #
+        # If none of the following is specified, the station's latititude and longitude
+        # will be used.  If more than one is specified, the first will be used according
+        # to the order listed here.
+        #
+        # geocode = "33.74,-84.39"
+        # iataCode = DEN
+        # icaoCode = KDEN
+        # placeid = 327145917e06d09373dd2760425a88622a62d248fd97550eb4883737d8d1173b
+        # postalKey = 81657:US
     [[OWM]]
         api_key = XXXXXXXXXXXXXXXX   # specify an open weathermap api_key
     [[UKMO]]

@@ -64,10 +64,10 @@
 #set $num_days = int($local_settings.get('num_days', $num_days))
 #set $bar_size = int($local_settings.get('bar_size', $bar_size))
 #set $orientation = $local_settings.get('orientation', $orientation)
-#set $show_date = $local_settings.get('show_date', $show_date)
-#set $show_pop = $local_settings.get('show_pop', $show_pop)
-#set $show_precip = $local_settings.get('show_precip', $show_precip)
-#set $show_obvis = $local_settings.get('show_obvis', $show_obvis)
+#set $show_date = int($local_settings.get('show_date', $show_date))
+#set $show_pop = int($local_settings.get('show_pop', $show_pop))
+#set $show_precip = int($local_settings.get('show_precip', $show_precip))
+#set $show_obvis = int($local_settings.get('show_obvis', $show_obvis))
 
 ## pre-calculate the periods
 #set $num_periods = $num_days * 24

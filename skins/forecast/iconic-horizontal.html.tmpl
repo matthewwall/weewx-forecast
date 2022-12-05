@@ -1,11 +1,11 @@
 #errorCatcher Echo
 ## forecast sampler skin for weewx - Copyright 2014 Matthew Wall
 ## $Id: iconic.html.tmpl 1612 2016-12-10 20:23:19Z mwall $
-#encoding UTF-8
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <title>Forecast Sampler: Iconic</title>
+  <meta charset="UTF-8">
   <link rel='stylesheet' type='text/css' href='forecast.css'/>
   <link rel='stylesheet' type='text/css' href='forecast_iconic.css'/>
   <style>
@@ -26,7 +26,7 @@
 <div class='source'>Weather Underground</div>
 #set global $forecast_iconic_settings = dict()
 #set global $forecast_iconic_settings['source'] = 'WU'
-#set global $forecast_iconic_settings['num_days'] = 10
+#set global $forecast_iconic_settings['num_days'] = 6
 #set global $forecast_iconic_settings['orientation'] = 'horizontal'
 #include "forecast_iconic.inc"
 
