@@ -3928,9 +3928,9 @@ class XTideForecast(Forecast):
             err = []
             preamble = True
             for line in p.stderr:
-                if line.startswith('Indexing'):
+                if line.startswith(b'Indexing'):
                     preamble = False
-                if not line.startswith('Indexing') and not preamble:
+                if not line.startswith(b'Indexing') and not preamble:
                     line = line.rstrip()
                     err.append(line)
             errmsg = ' '.join(err)
