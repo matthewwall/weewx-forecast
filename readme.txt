@@ -72,6 +72,32 @@ If you want tide forecasts, install xtides:
 Then determine your location:
   http://tides.mobilegeographics.com/
 
+Note: current versions of debian (bookworm) do not include xtide.
+This is perhaps true of other distributions.
+You'll need to build it yourself and set the 'prog' variable in the xtide
+section.
+Example (building xtide)
+  wget https://flaterco.com/files/xtide/xtide-2.15.5.tar.xz
+  (decompress and cd to directory)
+  sudo apt-get install libpng-dev
+  sudo apt-get install libtcd-dev
+  ./configure
+  make
+Example (setting prog variable t point to where you have built xtide):
+[Forecast]
+    ...
+    [[XTide]]
+        location = Palo Alto Yacht Harbor, San Francisco Bay, California
+        prog = /home/jkline/software/xtide-2.15.5/tide
+You'll still need to install xtide-data.  Example:
+    apt install xtide-data
+and you'll need to create an /etc/xtide.conf file to tell xtide where to find the harmonic
+data you installed with xtide-data.  Example:
+/etc/xtide.conf:
+    /usr/share/xtide
+(xtide-data installs harmonic data in the /usr/share/xtide directory)
+
+
 
 ===============================================================================
 Installation instructions:
